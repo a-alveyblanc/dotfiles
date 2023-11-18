@@ -69,9 +69,6 @@ autocmd BufWritePre <buffer> call TrimWhitespace()
 " }}}
 
 " Window splitting {{{
-"
-" split horizontally
-nnoremap <leader>- :split<CR>
 
 " split bindings
 nnoremap <C-J> <C-W><C-J>
