@@ -36,22 +36,20 @@ SAVEHIST=$HISTSIZE
 # {{{ exports
 
 export EDITOR=vim
-export PATH="$PATH:$HOME/julia-1.8.5/bin"
-export TERM=xterm-256color
+export PATH="$PATH:$HOME/.local/bin"
+export TERM=screen-256color
 
 # }}}
 
 # {{{ aliases
 
-alias vi="/usr/local/bin/vim"
+alias vi="$(which nvim)"
 alias ls='ls --color'
 alias l='ls -al'
-alias sedit='sudoedit'
-alias tt='TZ="<UTC-5>+5" taskwarrior-tui'
 
 # python related
 alias pydev='conda activate dev'
-alias pycl='PYOPENCL_CTX=0 python'
+alias pycl='PYOPENCL_CTX=0:0 python'
 alias pyclt='PYOPENCL_TEST=0:0 python -m pytest'
 
 # script aliases
@@ -95,7 +93,8 @@ fpath=($HOME/zshtools/zsh-completions $fpath)
 
 # }}}
 
-# {{{ conda
+# some start-up things
+eval $(ssh-agent) > /dev/null
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -110,9 +109,9 @@ else
     fi
 fi
 unset __conda_setup
+
+if [ -f "/home/aj/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/home/aj/miniforge3/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 
-# }}}
-
-# some start-up things
-eval $(ssh-agent) > /dev/null
