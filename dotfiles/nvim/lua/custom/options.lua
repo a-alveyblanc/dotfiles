@@ -1,7 +1,7 @@
 vim.o.background = 'dark'
 vim.o.termguicolors = true
 vim.cmd.colorscheme('onedark')
---require('doom').set() 
+--require('doom').set() -- why?
 
 vim.g.mapleader = '\\'
 vim.g.maplocalleader = '\\'
@@ -28,7 +28,7 @@ vim.wo.number = true
 vim.wo.signcolumn = 'yes'
 
 --vim.o.mouse = 'a'
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = 'unnamedplus' -- always copy to system clipboard
 
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300

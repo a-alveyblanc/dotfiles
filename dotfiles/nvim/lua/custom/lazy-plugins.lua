@@ -3,6 +3,7 @@ require('lazy').setup({
   'navarasu/onedark.nvim',
   'shaunsingh/doom-vibrant.nvim',
   'lervag/vimtex',
+  'nvim-orgmode/orgmode',
 
   -- Git related plugins
   'tpope/vim-fugitive',
@@ -17,8 +18,6 @@ require('lazy').setup({
     opts = { }
   },
 
-  -- NOTE: This is where your plugins related to LSP can be installed.
-  --  The configuration is done below. Search for lspconfig to find it below.
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -137,7 +136,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        --theme = 'onedark',
+        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
@@ -147,8 +146,6 @@ require('lazy').setup({
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help ibl`
     main = 'ibl',
     opts = {},
   },
@@ -162,13 +159,8 @@ require('lazy').setup({
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-      -- Only load if `make` is available. Make sure you have the system
-      -- requirements installed.
       {
         'nvim-telescope/telescope-fzf-native.nvim',
-        -- NOTE: If you are having trouble with this installation,
-        --       refer to the README for telescope-fzf-native for more instructions.
         build = 'make',
         cond = function()
           return vim.fn.executable 'make' == 1
@@ -178,7 +170,6 @@ require('lazy').setup({
   },
 
   {
-    -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
