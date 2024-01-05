@@ -9,7 +9,7 @@ vim.defer_fn(function()
     highlight = { enable = true },
     indent = {
       enable = true,
-      disable = { "python", },
+      --disable = { "python", },
     },
     incremental_selection = {
       enable = true,

@@ -10,13 +10,13 @@ vim.o.tw = 80
 vim.o.colorcolumn = "81"
 --vim.cmd('hi ColorColumn guibg=grey ctermbg=grey')
 
-vim.o.autoindent = true
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
+--vim.o.autoindent = true
 
-vim.o.breakindent = true
+--vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true

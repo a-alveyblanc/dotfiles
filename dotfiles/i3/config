@@ -2,6 +2,7 @@
 
 # mod key
 set $mod Mod4
+set $alt Mod1
 
 # set font
 font pango:iosevka 12
@@ -52,13 +53,13 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn 'Fira Code-18'
-bindsym $mod+d exec --no-startup-id rofi -font "Fira Code 10" -show drun
+bindsym $mod+d exec --no-startup-id rofi -font "iosevka 10" -show drun
 
 # start file manager
 bindsym $mod+n exec --no-startup-id nautilus --no-desktop
 
 # open browser
-bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+b exec --no-startup-id firefox 
 
 # }}}
 
@@ -205,6 +206,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# }}}
+
+# {{{ alt-tab behavior
+bindsym $alt+Tab exec --no-startup-id rofi -show
 # }}}
 
 # {{{ application specific window behavior
