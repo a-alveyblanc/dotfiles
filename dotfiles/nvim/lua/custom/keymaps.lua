@@ -4,7 +4,7 @@ local t_opts = { silent = true }
 -- {{{ useful commands
 
 vim.keymap.set('n', '<leader><Space>', '<cmd>nohlsearch<cr>', opts)
-vim.keymap.set('n', '<leader>n', '<cmd>Lex 15<cr>', opts)
+vim.keymap.set('n', '<leader>n', '<cmd>NvimTreeToggle<cr>', opts)
 vim.keymap.set('n', '<leader>p', '<cmd>so<cr>', opts)
 
 -- }}}

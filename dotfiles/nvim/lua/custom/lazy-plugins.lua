@@ -1,5 +1,6 @@
 require('lazy').setup({
 
+  'nvim-tree/nvim-tree.lua',
   'navarasu/onedark.nvim',
   'shaunsingh/doom-vibrant.nvim',
   'lervag/vimtex',
