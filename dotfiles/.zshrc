@@ -51,6 +51,7 @@ alias l='ls -al'
 alias pydev='conda activate dev'
 alias pycl='PYOPENCL_CTX=0:0 python'
 alias pyclt='PYOPENCL_TEST=0:0 python -m pytest'
+alias pycludb='PYOPENCL_CTX=0:0 python -m pudb'
 
 # script aliases
 alias jremote="$HOME/scripts/launch_jupyter.sh"
