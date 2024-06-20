@@ -1,14 +1,14 @@
 vim.o.background = 'dark'
 vim.o.termguicolors = true
-vim.cmd.colorscheme('onedark')
---require('doom').set() -- why?
 
 vim.g.mapleader = '\\'
 vim.g.maplocalleader = '\\'
 
 vim.o.tw = 80
 vim.o.colorcolumn = "81"
---vim.cmd('hi ColorColumn guibg=grey ctermbg=grey')
+
+vim.cmd("hi ColorColumn guibg=lightgrey ctermbg=lightgrey")
+vim.cmd("hi Comment cterm=italic gui=italic")
 
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
@@ -44,3 +44,11 @@ vim.o.conceallevel = 0
 vim.o.showmatch = true
 vim.o.wildmenu = true
 vim.o.showcmd = true
+
+-- update changed files automatically
+vim.o.autoread = true
+vim.api.nvim_create_autocmd(
+   { "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { "*" },
+})

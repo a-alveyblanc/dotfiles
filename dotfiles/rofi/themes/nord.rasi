@@ -6,7 +6,7 @@
  *******************************************************************************/
 
 * {
-    font:   "iosevka 12";
+    font:   "iosevka 18";
 
     nord0:     #2e3440;
     nord1:     #3b4252;
@@ -42,8 +42,8 @@ window {
     border-color:       @accent-color;
 
     location:   center;
-    width:      480px;
-    border:     0px;
+    width:      520px;
+    border:     1px;
 }
 
 inputbar {

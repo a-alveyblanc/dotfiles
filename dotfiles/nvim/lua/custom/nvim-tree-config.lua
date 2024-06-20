@@ -5,9 +5,6 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
--- empty setup using defaults
-require("nvim-tree").setup()
-
 -- OR setup with some options
 require("nvim-tree").setup({
   sort = {
@@ -15,6 +12,7 @@ require("nvim-tree").setup({
   },
   view = {
     width = 30,
+    preserve_window_proportions = true,
   },
   renderer = {
     group_empty = true,

@@ -35,9 +35,9 @@ SAVEHIST=$HISTSIZE
 
 # {{{ exports
 
-export EDITOR=vim
 export PATH="$PATH:$HOME/.local/bin"
-export TERM=screen-256color
+export EDITOR="$HOME/.local/bin/nvim"
+export SUDO_EDITOR=$EDITOR
 
 # }}}
 
@@ -54,7 +54,7 @@ alias pyclt='PYOPENCL_TEST=0:0 python -m pytest'
 alias pycludb='PYOPENCL_CTX=0:0 python -m pudb'
 
 # script aliases
-alias jremote="$HOME/scripts/launch_jupyter.sh"
+alias jremote="$HOME/dotfiles/scripts/launch_jupyter.sh"
 
 # }}}
 

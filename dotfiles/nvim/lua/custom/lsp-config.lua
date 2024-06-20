@@ -73,7 +73,10 @@ local servers = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
       -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-      -- diagnostics = { disable = { 'missing-fields' } },
+      diagnostics = {
+        globals = { 'vim' },
+        disable = { 'missing-fields' },
+      },
     },
   },
 }
@@ -108,5 +111,8 @@ mason_lspconfig.setup_handlers {
 }
 
 -- }}}
+
+
+require("lspconfig").mlir_lsp_server.setup({})
 
 -- vim:foldmethod=marker

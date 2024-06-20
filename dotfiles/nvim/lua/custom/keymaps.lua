@@ -6,6 +6,8 @@ local t_opts = { silent = true }
 vim.keymap.set('n', '<leader><Space>', '<cmd>nohlsearch<cr>', opts)
 vim.keymap.set('n', '<leader>n', '<cmd>NvimTreeToggle<cr>', opts)
 vim.keymap.set('n', '<leader>p', '<cmd>so<cr>', opts)
+vim.keymap.set('n', '<leader>e',
+  '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 
 -- }}}
 
@@ -56,5 +58,7 @@ vim.keymap.set('t', '<C-\\>', '<C-\\><C-N>', t_opts)
 -- vim.keymap.set('t', '<C-j>', '<C-\\><C-N><C-w>j', t_opts)
 -- vim.keymap.set('t', '<C-k>', '<C-\\><C-N><C-w>k', t_opts)
 -- vim.keymap.set('t', '<C-w>', '<C-\\><C-N><C-w>l', t_opts)
+vim.keymap.set('n', '<C-w>t',
+  '<C-w>s<C-w>j<cmd>term<cr><cmd>resize 20<cr><cmd>set nonumber<cr>', opts)
 
 -- }}} 
