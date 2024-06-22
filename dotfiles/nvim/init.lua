@@ -21,6 +21,6 @@ require("custom.lsp-config")
 require("custom.cmp-config")
 require("custom.nvim-tree-config")
 require("custom.toggleterm-config")
-require("custom.autoclose")
+--require("custom.autoclose")
 
 -- vim: ts=2 sts=2 sw=2 et foldmethod=marker
