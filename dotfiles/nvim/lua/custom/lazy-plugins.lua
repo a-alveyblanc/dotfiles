@@ -1,5 +1,4 @@
 require('lazy').setup({
-
   'akinsho/toggleterm.nvim',
 
   'm4xshen/autoclose.nvim',
@@ -10,6 +9,7 @@ require('lazy').setup({
   -- themes
   'navarasu/onedark.nvim',
   'NTBBloodbath/doom-one.nvim',
+  'olivercederborg/poimandres.nvim',
 
   -- Git related plugins
   'tpope/vim-fugitive',
@@ -146,7 +146,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        --theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },

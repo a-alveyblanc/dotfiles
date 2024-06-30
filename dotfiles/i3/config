@@ -38,7 +38,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
 # dropbox
-exec_always --no-startup-id $HOME/.dropbox-dist/dropboxd
+# exec_always --no-startup-id $HOME/.dropbox-dist/dropboxd
 
 # }}}
 
@@ -77,6 +77,8 @@ bindsym $mod+0     exec --no-startup-id amixer set Master toggle
 bindsym $mod+slash  exec --no-startup-id playerctl play-pause 
 bindsym $mod+period exec --no-startup-id playerctl next
 bindsym $mod+comma  exec --no-startup-id playerctl previous
+
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 
 # }}}
 
