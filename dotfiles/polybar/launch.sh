@@ -15,7 +15,7 @@ if type "xrandr"; then
     
     for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
         if [[ $m == $primary ]]; then
-            MONITOR=$m TRAY_POS=right polybar --reload bar1 &
+            MONITOR=$m TRAY_POS=none polybar --reload bar2 &
         else
             MONITOR=$m TRAY_POS=none polybar --reload bar2 & 
         fi 
