@@ -188,8 +188,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit?' \
-                          -B 'Exit' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit?' \
+#                           -B 'Exit' 'i3-msg exit'"
+bindsym $mod+Shift+e exec $HOME/.config/polybar/scripts/powermenu.sh
 
 # }}}
 

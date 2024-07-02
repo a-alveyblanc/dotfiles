@@ -94,9 +94,6 @@ fpath=($HOME/zshtools/zsh-completions $fpath)
 
 # }}}
 
-# some start-up things
-eval $(ssh-agent) > /dev/null
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/aj/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
