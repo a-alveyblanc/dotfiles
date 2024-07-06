@@ -1,5 +1,8 @@
 # {{{ general settings
 
+gaps inner 12
+gaps outer 1
+
 # mod key
 set $mod Mod4
 set $alt Mod1
@@ -29,7 +32,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id dunst
 
 # wallpapers
-exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpapers/water.png
+exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper.svg
 
 # statusbar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
