@@ -38,6 +38,8 @@ SAVEHIST=$HISTSIZE
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR="$HOME/.local/bin/nvim"
 export SUDO_EDITOR=$EDITOR
+export LLVM_BUILD_PATH="$HOME/tools/llvm-project/build"
+export PYTHONPATH="$LLVM_BUILD_PATH/tools/mlir/python_packages/mlir_core"
 
 # }}}
 

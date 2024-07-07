@@ -1,8 +1,10 @@
 require("onedark").setup({
-    style = 'dark', -- dark, darker, warm, warmer, light 
-    transparent = false,  -- Show/hide background
-    term_colors = true, -- Change terminal color as per the selected theme style
-    ending_tildes = true, -- Show the end-of-buffer tildes. By default they are hidden
+    style = 'dark',               -- dark, darker, warm, warmer, light
+    transparent = false,          -- Show/hide background
+    term_colors = true,           -- Change terminal color as per the selected
+                                  -- theme style
+    ending_tildes = true,         -- Show the end-of-buffer tildes. By default 
+                                  -- they are hidden
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
     toggle_style_key = "<leader>ts",
@@ -17,7 +19,7 @@ require("onedark").setup({
     },
 
     lualine = {
-        transparent = true, -- lualine center bar transparency
+        transparent = false, -- lualine center bar transparency
     },
 
     colors = {}, -- Override default colors
