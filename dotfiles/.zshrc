@@ -45,6 +45,7 @@ export PYTHONPATH="$LLVM_BUILD_PATH/tools/mlir/python_packages/mlir_core"
 
 # {{{ aliases
 
+alias rsrun="$HOME/dotfiles/scripts/rsrun.sh"
 alias vi="$(which nvim)"
 alias ls='ls --color'
 alias l='ls -al'
