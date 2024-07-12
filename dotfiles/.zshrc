@@ -115,3 +115,5 @@ if [ -f "/home/aj/miniforge3/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
+# :shrug:
+source "$HOME/.cargo/env"
