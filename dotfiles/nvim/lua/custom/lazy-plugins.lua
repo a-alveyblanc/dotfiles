@@ -1,10 +1,10 @@
 require('lazy').setup({
+  'nvim-tree/nvim-web-devicons',
   'akinsho/toggleterm.nvim',
-
   'm4xshen/autoclose.nvim',
   'nvim-tree/nvim-tree.lua',
   'lervag/vimtex',
-  --'nvim-orgmode/orgmode',
+  'nvim-orgmode/orgmode',
 
   -- themes
   'navarasu/onedark.nvim',
@@ -196,7 +196,7 @@ require('lazy').setup({
           gs.toggle_deleted, { desc = 'toggle git show deleted' })
 
         -- Text object
-        map({ 'o', 'x' }, 'ih', 
+        map({ 'o', 'x' }, 'ih',
           ':<C-U>Gitsigns select_hunk<CR>', { desc = 'select git hunk' })
       end,
     },
@@ -209,7 +209,6 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        --theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
