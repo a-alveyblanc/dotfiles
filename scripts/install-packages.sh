@@ -1,10 +1,17 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ "$GH_USERNAME" = "" ]; then
     GH_USERNAME="a-alveyblanc"
 fi
 
-mamba install pyopencl pocl islpy
+if [ "$ENV_NAME" = "" ]; then
+    ENV_NAME="dev"
+fi
+
+mamba create -n $ENV_NAME python=3.12 -y
+source "$CONDA_PREFIX"/bin/activate dev
+
+mamba install -y pyopencl pocl islpy
 
 packages="
     pymbolic \
@@ -43,4 +50,16 @@ for i in $my_packages; do
     git remote add mygh git@github.com:$GH_USERNAME/$i
     git pull mygh
     cd ../
+done
+
+extra_packages="
+    pytest \
+    pudb \
+    pytest-pudb \
+    pytest-xdist \
+    matplotlib
+"
+
+for i in $extra_packages; do
+    python -m pip install $i
 done
