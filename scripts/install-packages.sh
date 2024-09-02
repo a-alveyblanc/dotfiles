@@ -53,11 +53,16 @@ for i in $my_packages; do
 done
 
 extra_packages="
-    pytest \
+    matplotlib \
+    mypy \
+    orderedsets \
     pudb \
+    pylint \
+    pytest \
     pytest-pudb \
     pytest-xdist \
-    matplotlib
+    pyyaml \
+    ruff
 "
 
 for i in $extra_packages; do
