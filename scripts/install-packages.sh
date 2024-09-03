@@ -54,6 +54,7 @@ done
 
 extra_packages="
     matplotlib \
+    mpi4py \
     mypy \
     orderedsets \
     pudb \
