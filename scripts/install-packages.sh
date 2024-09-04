@@ -53,6 +53,7 @@ for i in $my_packages; do
 done
 
 extra_packages="
+    jax \
     matplotlib \
     mpi4py \
     mypy \
