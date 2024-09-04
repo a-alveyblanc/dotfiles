@@ -1,4 +1,7 @@
 require('lazy').setup({
+  'nvim-tree/nvim-web-devicons',
+  'echasnovski/mini.nvim',
+
   'akinsho/toggleterm.nvim',
 
   'm4xshen/autoclose.nvim',
