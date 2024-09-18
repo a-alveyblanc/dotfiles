@@ -53,8 +53,11 @@ for i in $my_packages; do
 done
 
 extra_packages="
+    furo \
+    ipython \
     jax \
     matplotlib \
+    meshpy \
     mpi4py \
     mypy \
     orderedsets \
@@ -64,7 +67,9 @@ extra_packages="
     pytest-pudb \
     pytest-xdist \
     pyyaml \
-    ruff
+    ruff \
+    sphinx \
+    sphinx-copybutton
 "
 
 for i in $extra_packages; do
