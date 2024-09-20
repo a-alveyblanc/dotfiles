@@ -1,14 +1,9 @@
 # {{{ general settings
 
-gaps inner 5
-gaps outer 1
-
 # mod key
 set $mod Mod4
 set $alt Mod1
 
-# set font
-font pango:iosevka 8
 
 # }}}
 
@@ -255,6 +250,29 @@ for_window [class="net-runelite-client-RuneLite"] floating enable
 for_window [class="net-runelite-client-RuneLite"] move to workspace $ws1
 
 for_window [class="Spotify"] move to workspace $ws2
+
+# }}}
+
+# {{{ theme 
+
+# set font
+font pango:iosevka 8
+
+# border
+default_border normal 1
+
+# gaps
+gaps inner 8
+gaps outer -4
+
+# colors                border  bg      text    indicator child border
+client.focused          #ffffff #ffffff #000000 #2e9ef4   #ffffff
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
 
 # }}}
 
