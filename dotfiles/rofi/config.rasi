@@ -1,3 +1,5 @@
-//@theme "themes/onedark.rasi"
+@theme "themes/onedark.rasi"
 //@theme "themes/arcdark-mod.rasi"
-@theme "themes/nord.rasi"
+//@theme "themes/nord.rasi"
+//@theme "themes/rounded-common.rasi"
+//@theme "themes/rounded-gray.rasi"
