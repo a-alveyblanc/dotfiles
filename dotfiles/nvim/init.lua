@@ -11,10 +11,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("custom.lazy-plugins")
-require("custom.theme-config")
-require("custom.keymaps")
 require("custom.options")
+require("custom.lazy-plugins")
+require("custom.keymaps")
+require("custom.theme-config")
 require("custom.telescope-config")
 require("custom.treesitter-config")
 require("custom.lsp-config")

@@ -1,3 +1,6 @@
+-- non-package specific keymaps; navigation, text manipulation, etc. 
+
+
 local opts = { noremap = true, silent = true }
 local t_opts = { silent = true }
 
@@ -54,11 +57,5 @@ vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<cr>', opts)
 -- {{{ terminal navigation
 
 vim.keymap.set('t', '<C-\\>', '<C-\\><C-N>', t_opts)
--- vim.keymap.set('t', '<C-h>', '<C-\\><C-N><C-w>h', t_opts)
--- vim.keymap.set('t', '<C-j>', '<C-\\><C-N><C-w>j', t_opts)
--- vim.keymap.set('t', '<C-k>', '<C-\\><C-N><C-w>k', t_opts)
--- vim.keymap.set('t', '<C-w>', '<C-\\><C-N><C-w>l', t_opts)
--- vim.keymap.set('n', '<C-w>t',
---   '<C-w>s<C-w>j<cmd>term<cr><cmd>resize 20<cr><cmd>set nonumber<cr>', opts)
 
--- }}} 
+-- }}}

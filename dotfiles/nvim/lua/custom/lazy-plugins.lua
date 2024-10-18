@@ -10,6 +10,7 @@ require('lazy').setup({
   'navarasu/onedark.nvim',
   'NTBBloodbath/doom-one.nvim',
   'olivercederborg/poimandres.nvim',
+  'NLKNguyen/papercolor-theme',
 
   -- Git related plugins
   'tpope/vim-fugitive',
