@@ -55,6 +55,7 @@ alias pydev='conda activate dev'
 alias pycl='PYOPENCL_CTX=0:0 python'
 alias pyclt='PYOPENCL_TEST=0:0 python -m pytest'
 alias pycludb='PYOPENCL_CTX=0:0 python -m pudb'
+alias pyclgpu='PYOPENCL_CTX=0:1 python'
 
 # script aliases
 alias jremote="$HOME/dotfiles/scripts/launch_jupyter.sh"
