@@ -56,6 +56,7 @@ extra_packages="
     furo \
     ipython \
     jax \
+    logpyle \
     matplotlib \
     meshpy \
     mpi4py \
@@ -63,6 +64,7 @@ extra_packages="
     orderedsets \
     pudb \
     pylint \
+    pymetis \
     pytest \
     pytest-pudb \
     pytest-xdist \
