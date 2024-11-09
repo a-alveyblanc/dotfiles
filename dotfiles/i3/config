@@ -22,7 +22,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --color 000000
 
 # NetworkManager system tray GUI
 exec --no-startup-id nm-applet
-#exec --no-startup-id gnome-settings-daemon
 
 # notifications
 exec_always --no-startup-id dunst
@@ -37,7 +36,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
 # dropbox
-exec_always --no-startup-id $HOME/.dropbox-dist/dropboxd
+# exec_always --no-startup-id $HOME/.dropbox-dist/dropboxd
 
 # }}}
 
@@ -60,7 +59,7 @@ bindsym $mod+d exec --no-startup-id rofi -font "iosevka 20" -show drun
 bindsym $mod+n exec --no-startup-id thunar
 
 # open browser
-bindsym $mod+b exec --no-startup-id google-chrome 
+bindsym $mod+b exec --no-startup-id google-chrome --force-device-scale-factor=1.25
 
 # screen zoomer
 bindsym $mod+z exec --no-startup-id $HOME/.local/bin/boomer
@@ -256,10 +255,10 @@ for_window [class="Spotify"] move to workspace $ws2
 # {{{ theme 
 
 # set font
-font pango:iosevka 8
+font pango:iosevka 12
 
 # border
-default_border normal 1
+# default_border normal 1
 
 # gaps
 gaps inner 8

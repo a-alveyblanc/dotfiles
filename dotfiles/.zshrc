@@ -2,7 +2,8 @@ autoload colors && colors
 
 NEWLINE=$'\n'
 
-PROMPT_LOGIN="%{$fg_bold[white]%}%n%{$fg_bold[yellow]%} @ %{$reset_color%}%{$fg_bold[white]%}%m%{$reset_color%}"
+PROMPT_LOGIN="%n%{$fg_bold[yellow]%} @ %{$reset_color%}%m%{$reset_color%}"
+# PROMPT_LOGIN="%{$fg_bold[white]%}%n%{$fg_bold[yellow]%} @ %{$reset_color%}%{$fg_bold[white]%}%m%{$reset_color%}"
 PROMPT_DIR='[%2~] '
 PROMPT="$PROMPT_LOGIN $PROMPT_DIR$NEWLINE%{$fg[yellow]%}$%{$reset_color%} "
 
@@ -119,3 +120,4 @@ fi
 
 # :shrug:
 source "$HOME/.cargo/env"
+source "/home/aj/.deno/env"

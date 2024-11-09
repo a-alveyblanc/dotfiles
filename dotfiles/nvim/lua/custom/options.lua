@@ -39,7 +39,7 @@ vim.o.foldmethod = 'marker'
 vim.o.foldlevel = 1
 
 vim.o.laststatus = 2
-vim.o.conceallevel = 0
+vim.o.conceallevel = 2
 
 vim.o.showmatch = true
 vim.o.wildmenu = true

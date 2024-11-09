@@ -4,13 +4,33 @@ require('lazy').setup({
   'm4xshen/autoclose.nvim',
   'nvim-tree/nvim-tree.lua',
   'lervag/vimtex',
-  'nvim-orgmode/orgmode',
+
+  {
+    "toppair/peek.nvim",
+    event = { "VeryLazy" },
+    build = "deno task --quiet build:fast",
+    config = function()
+        require("peek").setup()
+        vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+        vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+    end,
+  },
+
+  {
+    'epwalsh/obsidian.nvim',
+    dependencies = "nvim-lua/plenary.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown"
+  },
 
   -- themes
   'navarasu/onedark.nvim',
   'NTBBloodbath/doom-one.nvim',
   'olivercederborg/poimandres.nvim',
   'NLKNguyen/papercolor-theme',
+  'folke/tokyonight.nvim',
+  { 'catppuccin/nvim', name = 'catppuccin' },
 
   -- Git related plugins
   'tpope/vim-fugitive',

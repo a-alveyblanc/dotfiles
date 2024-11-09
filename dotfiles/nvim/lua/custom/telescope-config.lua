@@ -76,6 +76,9 @@ vim.keymap.set('n', '<leader>ff', function()
   end,
   { desc = '[F]ind [F]iles' })
 
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep,
+  { desc = 'Live Grep' })
+
 vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
 vim.keymap.set('n', '<leader>ss', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })

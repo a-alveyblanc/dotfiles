@@ -21,7 +21,7 @@ require("custom.lsp-config")
 require("custom.cmp-config")
 require("custom.nvim-tree-config")
 require("custom.toggleterm-config")
-require("custom.orgmode-config")
---require("custom.autoclose")
+require("custom.obsidian-nvim-config")
+require("custom.peek-config")
 
 -- vim: ts=2 sts=2 sw=2 et foldmethod=marker

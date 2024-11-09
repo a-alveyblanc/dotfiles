@@ -7,12 +7,11 @@ vim.opt.termguicolors = true
 
 -- OR setup with some options
 require("nvim-tree").setup({
-  sort = {
-    sorter = "case_sensitive",
-  },
+  sort = { sorter = "case_sensitive", },
   view = {
     width = 30,
     preserve_window_proportions = true,
+    float = { enable = false, },
   },
   renderer = {
     group_empty = true,
