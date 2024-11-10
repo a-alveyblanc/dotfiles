@@ -24,4 +24,7 @@ require("custom.toggleterm-config")
 require("custom.obsidian-nvim-config")
 require("custom.peek-config")
 
+vim.cmd('source ~/.config/nvim/vim/*')
+vim.lsp.set_log_level("OFF")
+
 -- vim: ts=2 sts=2 sw=2 et foldmethod=marker

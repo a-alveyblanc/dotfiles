@@ -69,16 +69,16 @@ require('lazy').setup({
       merge_keywords = true,
       highlight = {
         multiline = true, -- enable multine todo comments
-        multiline_pattern = "^.", -- lua pattern to match the next multiline 
+        multiline_pattern = "^.", -- lua pattern to match the next multiline
                                   -- from the start of the matched keyword
-        multiline_context = 10, -- extra lines that will be re-evaluated when 
+        multiline_context = 10, -- extra lines that will be re-evaluated when
                                 -- changing a line
         before = "", -- "fg" or "bg" or empty
         keyword = "wide", -- "fg", "bg", "wide", "wide_bg", "wide_fg" or empty.
         after = "fg", -- "fg" or "bg" or empty
-        pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used 
+        pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used
                                          -- for highlighting (vim regex)
-        comments_only = true, -- uses treesitter to match keywords in comments 
+        comments_only = true, -- uses treesitter to match keywords in comments
                               -- only
         max_line_len = 400, -- ignore lines longer than this
         exclude = {}, -- list of file types to exclude highlighting
@@ -117,10 +117,8 @@ require('lazy').setup({
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', opts = {} },
 
-      -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
       'mfussenegger/nvim-lint',
     },
@@ -145,7 +143,7 @@ require('lazy').setup({
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   {
-    -- Adds git related signs to the gutter, as well as utilities for managing 
+    -- Adds git related signs to the gutter, as well as utilities for managing
     -- changes
     'lewis6991/gitsigns.nvim',
     opts = {

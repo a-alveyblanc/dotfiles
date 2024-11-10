@@ -40,16 +40,54 @@ end
 require('mason').setup()
 require('mason-lspconfig').setup()
 
--- {{{ lsp servers 
+-- {{{ lsp servers
+
+-- {{{ get all subdirectories (for pyright)
+
+local function get_all_subdirectories(base_dir)
+  local paths = {}
+  local uv = vim.loop
+
+  -- Resolve environment variable if present
+  base_dir = base_dir:gsub("^%$([%w_]+)", os.getenv)
+
+  -- Open the directory
+  local dir = uv.fs_scandir(base_dir)
+  if not dir then
+    print("Directory does not exist: " .. base_dir)
+    return paths
+  end
+
+  -- Iterate through entries in the directory
+  while true do
+    local name, type = uv.fs_scandir_next(dir)
+    if not name then break end
+    if type == "directory" then
+      table.insert(paths, base_dir .. "/" .. name)
+    end
+  end
+
+  return paths
+end
+
+local python_extra_paths_root = "$HOME/research/src"
+local python_extra_paths = get_all_subdirectories(python_extra_paths_root)
+
+-- }}}
 
 local servers = {
   clangd = {},
-
   rust_analyzer = {},
-
-  pyright = {},
-
   html = { filetypes = { 'html', 'twig', 'hbs'} },
+  ruff = {},
+  pyright = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        extraPaths = python_extra_paths
+      },
+    },
+  },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -92,7 +130,7 @@ mason_lspconfig.setup_handlers {
 }
 
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = true,
   signs = true,
   underline = true,
   update_in_insert = false,
