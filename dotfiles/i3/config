@@ -18,7 +18,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --color 000000 
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --color 000000
 
 # NetworkManager system tray GUI
 exec --no-startup-id nm-applet
@@ -27,7 +27,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id dunst
 
 # wallpapers
-exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/gnome/truchet-d.webp 
+exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/gnome/truchet-d.webp
 
 # statusbar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -72,7 +72,7 @@ bindsym $mod+equal exec --no-startup-id amixer set Master -q 5%+
 bindsym $mod+minus exec --no-startup-id amixer set Master -q 5%-
 bindsym $mod+0     exec --no-startup-id amixer set Master toggle
 
-bindsym $mod+slash  exec --no-startup-id playerctl play-pause 
+bindsym $mod+slash  exec --no-startup-id playerctl play-pause
 bindsym $mod+period exec --no-startup-id playerctl next
 bindsym $mod+comma  exec --no-startup-id playerctl previous
 
@@ -250,9 +250,12 @@ for_window [class="net-runelite-client-RuneLite"] move to workspace $ws1
 
 for_window [class="Spotify"] move to workspace $ws2
 
+for_window [class="matplotlib"] floating enable
+for_window [class="Matplotlib"] floating enable
+
 # }}}
 
-# {{{ theme 
+# {{{ theme
 
 # set font
 font pango:iosevka 12

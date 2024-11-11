@@ -23,6 +23,7 @@ require("custom.nvim-tree-config")
 require("custom.toggleterm-config")
 require("custom.obsidian-nvim-config")
 require("custom.peek-config")
+require("custom.autoclose")
 
 vim.cmd('source ~/.config/nvim/vim/*')
 vim.lsp.set_log_level("OFF")
