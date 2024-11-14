@@ -4,15 +4,7 @@ obsidian.setup({
    workspaces = {
       {
          name = "research",
-         path = "~/vaults/research",
-      },
-      {
-         name = "projects",
-         path = "~/vaults/projects",
-      },
-      {
-         name = "todos",
-         path = "~/vaults/todos",
+         path = "~/vaults",
       },
    },
 

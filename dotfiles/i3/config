@@ -252,6 +252,8 @@ for_window [class="Spotify"] move to workspace $ws2
 
 for_window [class="matplotlib"] floating enable
 for_window [class="Matplotlib"] floating enable
+for_window [class="graphviz"] floating enable
+for_window [class="Graphviz"] floating enable
 
 # }}}
 
