@@ -1,10 +1,10 @@
 -- {{{ catppuccin
 
 require("catppuccin").setup({
-    flavour = "auto", -- latte, frappe, macchiato, mocha
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
     background = { -- :h background
         light = "latte",
-        dark = "macchiato",
+        dark = "mocha",
     },
     transparent_background = false, -- disables setting the background color.
     show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
@@ -21,8 +21,8 @@ require("catppuccin").setup({
         comments = { "italic" }, -- Change the style of comments
         conditionals = { "italic" },
         loops = { "italic" },
-        functions = { "italic" },
-        keywords = {},
+        functions = { "bold", "italic" },
+        keywords = { "italic"},
         strings = {},
         variables = {},
         numbers = {},
@@ -53,7 +53,7 @@ require("catppuccin").setup({
 -- -- Lua
 -- require('onedark').setup  {
 --     -- Main options --
---     style = 'light', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+--     style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 --     transparent = false,  -- Show/hide background
 --     term_colors = true, -- Change terminal color as per the selected theme style
 --     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -96,3 +96,6 @@ vim.cmd.colorscheme("catppuccin")
 vim.cmd("set background=dark")
 -- vim.cmd.colorscheme("tokyonight")
 -- vim.cmd.colorscheme("onedark")
+-- vim.cmd("set t_Co=256")
+-- vim.cmd("set background=dark")
+-- vim.cmd.colorscheme("PaperColor")

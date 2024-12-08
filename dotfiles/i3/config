@@ -9,6 +9,7 @@ set $alt Mod1
 
 # {{{ startup applications
 
+exec --no-startup-id xcalib -s 0 $HOME/dotfiles/dotfiles/4k-monitor.icm
 exec --no-startup-id dbus-update-activation-environment --all
 exec --no-startup-id /usr/libexec/gsd-xsettings
 
@@ -46,7 +47,7 @@ floating_modifier $mod
 # {{{ application launch bindings
 
 # start a terminal
-bindsym $mod+Return exec $HOME/.local/bin/wezterm
+bindsym $mod+Return exec $HOME/.local/bin/kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill

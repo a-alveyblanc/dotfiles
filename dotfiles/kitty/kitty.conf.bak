@@ -6,10 +6,10 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      Iosevka Term 
+font_family      Iosevka Fixed
 bold_font        auto
 italic_font      auto
-bold_italic_font auto 
+bold_italic_font auto
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
@@ -50,7 +50,7 @@ font_size 14
 # symbol_map
 
 #: E.g. symbol_map U+E0A0-U+E0A3,U+E0C0-U+E0C7 PowerlineSymbols
-symbol_map U+E000-U+F8FF,U+F0000-U+FFFFD,U+100000-U+10FFFD SymbolsNerdFontMono 
+symbol_map U+E000-U+F8FF,U+F0000-U+FFFFD,U+100000-U+10FFFD SymbolNerdFontMono
 
 #: Map the specified Unicode codepoints to a particular font. Useful
 #: if you need special rendering for some symbols, such as for
@@ -168,7 +168,7 @@ symbol_map U+E000-U+F8FF,U+F0000-U+FFFFD,U+100000-U+10FFFD SymbolsNerdFontMono
 #: font glyph is rendered and the baseline at which the glyph is
 #: placed in the cell. For example::
 
-#:     modify_font cell_width 80%
+#:     modify_font cell_width 115%
 #:     modify_font cell_height -2px
 #:     modify_font baseline 3
 
