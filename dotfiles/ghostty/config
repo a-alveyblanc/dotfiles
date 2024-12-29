@@ -5,8 +5,11 @@ cursor-invert-fg-bg = true
 cursor-style = block
 cursor-style-blink = false
 desktop-notifications = true
-font-size = 12
 window-vsync = false
+
+# font configs
+font-family = Iosevka Term
+font-size = 12
 
 
 # don't override tmux pane switching keybinds
