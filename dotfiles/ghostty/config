@@ -11,6 +11,9 @@ window-vsync = false
 font-family = Iosevka Term
 font-size = 12
 
+# shell integration
+shell-integration-features = no-cursor
+
 
 # don't override tmux pane switching keybinds
 keybind = alt+zero=unbind
