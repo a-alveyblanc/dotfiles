@@ -47,7 +47,7 @@ floating_modifier $mod
 # {{{ application launch bindings
 
 # start a terminal
-bindsym $mod+Return exec $HOME/.local/bin/kitty
+bindsym $mod+Return exec $HOME/.local/bin/ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -60,7 +60,7 @@ bindsym $mod+d exec --no-startup-id rofi -font "iosevka 20" -show drun
 bindsym $mod+n exec --no-startup-id thunar
 
 # open browser
-bindsym $mod+b exec --no-startup-id google-chrome --force-device-scale-factor=1.25
+bindsym $mod+b exec --no-startup-id firefox
 
 # screen zoomer
 bindsym $mod+z exec --no-startup-id $HOME/.local/bin/boomer
