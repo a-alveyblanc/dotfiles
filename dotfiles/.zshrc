@@ -39,9 +39,8 @@ SAVEHIST=$HISTSIZE
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR="$HOME/.local/bin/nvim"
 export SUDO_EDITOR=$EDITOR
+export MANPAGER="nvim --appimage-extract-and-run +Man!"
 export LLVM_BUILD_PATH="$HOME/tools/llvm-project/build"
-# export PYTHONPATH=$PYTHONPATH:"$LLVM_BUILD_PATH/tools/mlir/python_packages/mlir_core"
-# export PYTHONPATH=$PYTHONPATH:"$HOME/research/src"
 
 # }}}
 
