@@ -4,6 +4,7 @@ require('lazy').setup({
   'm4xshen/autoclose.nvim',
   'nvim-tree/nvim-tree.lua',
   'lervag/vimtex',
+  'tanvirtin/monokai.nvim',
 
   {
     "toppair/peek.nvim",

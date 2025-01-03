@@ -50,13 +50,13 @@ alias rsrun="$HOME/dotfiles/scripts/rsrun.sh"
 alias vi="$(which nvim)"
 alias ls='ls --color'
 alias l='ls -al'
+alias dvis='rm *.sqlite *.pvtu *.vtu'
 
 # python related
 alias pydev='conda activate dev'
 alias pycl='PYOPENCL_CTX=0:0 python'
 alias pyclt='PYOPENCL_TEST=0:0 python -m pytest'
-alias pycludb='PYOPENCL_CTX=0:0 python -m pudb'
-alias pyclgpu='PYOPENCL_CTX=0:1 python'
+alias pyclg='PYOPENCL_CTX=1 python'
 
 # script aliases
 alias jremote="$HOME/dotfiles/scripts/launch_jupyter.sh"
