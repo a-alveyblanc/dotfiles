@@ -13,8 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("custom.options")
 require("custom.lazy-plugins")
-require("custom.keymaps")
 require("custom.theme-config")
+require("custom.keymaps")
 require("custom.telescope-config")
 require("custom.treesitter-config")
 require("custom.lsp-config")
@@ -25,6 +25,7 @@ require("custom.obsidian-nvim-config")
 require("custom.peek-config")
 require("custom.autoclose")
 require("custom.vimtex-config")
+
 
 vim.cmd('source ~/.config/nvim/vim/*')
 vim.lsp.set_log_level("OFF")

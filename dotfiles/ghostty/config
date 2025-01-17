@@ -9,14 +9,14 @@ desktop-notifications = true
 window-vsync = false
 
 # font configs
-# font-family = Iosevka Term
+font-family = Iosevka Term
 font-size = 12
 
 # shell integration
 shell-integration-features = no-cursor
 
 # theme settings
-theme = OneHalfDark
+# theme = tokyonight-storm
 
 
 # don't override tmux pane switching keybinds

@@ -85,8 +85,8 @@ require('onedark').setup  {
 
     -- Plugins Config --
     diagnostics = {
-        darker = true, -- darker colors for diagnostic
-        undercurl = false,   -- use undercurl instead of underline for diagnostics
+        darker = false, -- darker colors for diagnostic
+        undercurl = true,   -- use undercurl instead of underline for diagnostics
         background = false,    -- use background color for virtual text
     },
 }
@@ -94,8 +94,10 @@ require('onedark').setup  {
 -- setup must be called before loading
 -- vim.cmd.colorscheme("catppuccin")
 -- vim.cmd("set background=dark")
--- vim.cmd.colorscheme("tokyonight")
 vim.cmd.colorscheme("onedark")
 vim.cmd("set t_Co=256")
-vim.cmd("set background=dark")
+
+-- vim.cmd.colorscheme("tokyonight")
+-- vim.cmd("set background=dark")
+
 -- vim.cmd.colorscheme("PaperColor")

@@ -36,7 +36,7 @@ SAVEHIST=$HISTSIZE
 
 # {{{ exports
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/flatpak/exports/bin:$HOME/.local/share/flatpak/exports/bin"
 export EDITOR="$HOME/.local/bin/nvim"
 export SUDO_EDITOR=$EDITOR
 export MANPAGER="nvim --appimage-extract-and-run +Man!"
