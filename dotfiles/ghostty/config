@@ -10,7 +10,7 @@ window-vsync = false
 
 # font configs
 font-family = Iosevka Term
-font-size = 12
+font-size = 14
 
 # shell integration
 shell-integration-features = no-cursor
