@@ -15,9 +15,8 @@ font-size = 14
 # shell integration
 shell-integration-features = no-cursor
 
-# theme settings
-# theme = tokyonight-storm
-
+# window settings
+gtk-titlebar = false
 
 # don't override tmux pane switching keybinds
 keybind = alt+zero=unbind

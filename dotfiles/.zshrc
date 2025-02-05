@@ -51,6 +51,7 @@ alias vi="$(which nvim)"
 alias ls='ls --color'
 alias l='ls -al'
 alias dvis='rm *.sqlite *.pvtu *.vtu'
+alias dcache="rm -rf $HOME/.cache/pytools/pdict* $HOME/.cache/pyopencl $HOME/.cache/pocl $HOME/.nv/ComputeCache"
 
 # python related
 alias pydev='conda activate dev'

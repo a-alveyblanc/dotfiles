@@ -11,21 +11,36 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("custom.options")
+-- plugins
 require("custom.lazy-plugins")
-require("custom.theme-config")
+
+-- global options
+require("custom.options")
 require("custom.keymaps")
+
+-- theme
+require("custom.theme-config")
+require("custom.lualine-config")
+require("custom.todo-comments-config")
+
+-- telescope
 require("custom.telescope-config")
+
+-- lsp-ish stuff
 require("custom.treesitter-config")
 require("custom.lsp-config")
 require("custom.cmp-config")
+
+-- utility / QoL
+require("custom.auto-pairs-config")
 require("custom.nvim-tree-config")
 require("custom.toggleterm-config")
-require("custom.obsidian-nvim-config")
-require("custom.peek-config")
-require("custom.autoclose")
 require("custom.vimtex-config")
+require("custom.git-signs-config")
+require("custom.obsidian-nvim-config")
 
+-- misc.
+require("custom.startup")
 
 vim.cmd('source ~/.config/nvim/vim/*')
 vim.lsp.set_log_level("OFF")
