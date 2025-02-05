@@ -97,16 +97,13 @@ local servers = {
 
 -- }}}
 
--- Setup neovim lua configuration
 require('neodev').setup()
 
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- {{{ mason config
 
--- Ensure the servers above are installed
 local mason_lspconfig = require('mason-lspconfig')
 
 mason_lspconfig.setup {
@@ -134,7 +131,7 @@ vim.diagnostic.config({
 
 -- }}}
 
-
+-- custom servers
 require("lspconfig").mlir_lsp_server.setup({})
 
 -- vim:foldmethod=marker

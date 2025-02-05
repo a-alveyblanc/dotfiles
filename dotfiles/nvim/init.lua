@@ -27,16 +27,16 @@ require("custom.todo-comments-config")
 require("custom.telescope-config")
 
 -- lsp-ish stuff
-require("custom.treesitter-config")
-require("custom.lsp-config")
 require("custom.cmp-config")
+require("custom.lsp-config")
+require("custom.treesitter-config")
 
 -- utility / QoL
-require("custom.auto-pairs-config")
-require("custom.nvim-tree-config")
-require("custom.toggleterm-config")
 require("custom.vimtex-config")
 require("custom.git-signs-config")
+require("custom.nvim-tree-config")
+require("custom.auto-pairs-config")
+require("custom.toggleterm-config")
 require("custom.obsidian-nvim-config")
 
 -- misc.
