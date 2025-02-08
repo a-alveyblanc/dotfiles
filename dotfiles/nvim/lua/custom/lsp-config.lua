@@ -71,7 +71,6 @@ local python_extra_paths = get_all_subdirectories(python_extra_paths_root)
 -- }}}
 
 local servers = {
-  clangd = {},
   rust_analyzer = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   ruff = {},
@@ -133,5 +132,14 @@ vim.diagnostic.config({
 
 -- custom servers
 require("lspconfig").mlir_lsp_server.setup({})
+require("lspconfig").clangd.setup({
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--clang-tidy",
+    "--enable-config",
+    "--completion-style=detailed"
+  }
+})
 
 -- vim:foldmethod=marker

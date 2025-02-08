@@ -12,6 +12,7 @@ require('lazy').setup({
   'lewis6991/gitsigns.nvim',
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  'tpope/vim-sleuth',
 
   -- qol
   'nvim-tree/nvim-tree.lua',     -- better file explorer
@@ -19,9 +20,7 @@ require('lazy').setup({
   'akinsho/toggleterm.nvim',     -- used for floating terminal
   'folke/which-key.nvim',        -- show keybinds related to current key combo
   'nvim-lualine/lualine.nvim',   -- better statusline
-  'numToStr/Comment.nvim',       -- block comments
-  'tpope/vim-sleuth',            -- autodetect tabstop/shiftwidth
-
+  { 'numToStr/Comment.nvim', opts = {} },       -- block comments
 
   -- plugins that require extra stuff when being installed
   {
@@ -84,7 +83,7 @@ require('lazy').setup({
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
 
-      'L3MON4D3/LuaSnip',
+      {'L3MON4D3/LuaSnip', dependencies = "rafamadriz/friendly-snippets"},
       'saadparwaiz1/cmp_luasnip'
     },
   },
