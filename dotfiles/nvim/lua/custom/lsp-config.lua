@@ -138,8 +138,9 @@ require("lspconfig").clangd.setup({
     "--background-index",
     "--clang-tidy",
     "--enable-config",
-    "--completion-style=detailed"
-  }
+    "--completion-style=detailed",
+  },
+  capabilities = capabilities,
 })
 
 -- vim:foldmethod=marker
