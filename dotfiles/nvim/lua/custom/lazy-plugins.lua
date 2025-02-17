@@ -24,6 +24,11 @@ require('lazy').setup({
 
   -- plugins that require extra stuff when being installed
   {
+    'nvim-orgmode/orgmode',
+    event = 'VeryLazy',
+  },
+
+  {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     config = true

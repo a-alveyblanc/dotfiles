@@ -16,6 +16,7 @@ vim.defer_fn(function()
       'bash',
       'markdown',
       'markdown_inline',
+      'org',
     },
 
     auto_install = false,
