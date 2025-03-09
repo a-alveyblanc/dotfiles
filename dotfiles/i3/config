@@ -53,7 +53,7 @@ floating_modifier $mod
 # {{{ application launch bindings
 
 # start a terminal
-bindsym $mod+Return exec $HOME/.local/bin/ghostty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill

@@ -18,6 +18,7 @@ shell-integration-features = no-cursor
 # window settings
 gtk-titlebar = false
 
+# keybinds
 # don't override tmux pane switching keybinds
 keybind = alt+zero=unbind
 keybind = alt+one=unbind
@@ -29,6 +30,11 @@ keybind = alt+six=unbind
 keybind = alt+seven=unbind
 keybind = alt+eight=unbind
 keybind = alt+nine=unbind
+keybind = ctrl+shift+e=unbind
+keybind = alt+h=unbind
+keybind = alt+j=unbind
+keybind = alt+k=unbind
+keybind = alt+l=unbind
 
 keybind = ctrl+alt+one=goto_tab:1
 keybind = ctrl+alt+two=goto_tab:2
@@ -39,3 +45,15 @@ keybind = ctrl+alt+six=goto_tab:6
 keybind = ctrl+alt+seven=goto_tab:7
 keybind = ctrl+alt+eight=goto_tab:8
 keybind = ctrl+alt+nine=goto_tab:9
+
+keybind = ctrl+shift+h=new_split:left
+keybind = ctrl+shift+j=new_split:down
+keybind = ctrl+shift+k=new_split:up
+keybind = ctrl+shift+l=new_split:right
+keybind = ctrl+shift+e=equalize_splits
+keybind = ctrl+shift+space=toggle_tab_overview
+
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right
