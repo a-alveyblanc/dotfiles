@@ -273,8 +273,8 @@ font pango:iosevka 12
 # default_border normal 1
 
 # gaps
-gaps inner 10
-gaps outer 10
+# gaps inner 10
+# gaps outer 10
 
 # colors                border  bg      text    indicator child border
 # client.focused          #ffffff #ffffff #000000 #2e9ef4   #ffffff
