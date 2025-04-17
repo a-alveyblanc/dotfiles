@@ -37,10 +37,14 @@ SAVEHIST=$HISTSIZE
 # {{{ exports
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/flatpak/exports/bin:$HOME/.local/share/flatpak/exports/bin"
+export PATH="$PATH:$HOME/tools/texlive/2025/bin/x86_64-linux"
 export EDITOR="$HOME/.local/bin/nvim"
 export SUDO_EDITOR=$EDITOR
 export MANPAGER="nvim --appimage-extract-and-run +Man!"
 export LLVM_BUILD_PATH="$HOME/tools/llvm-project/build"
+
+export MANPATH="$MANPATH:$HOME/tools/texlive/2025/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:$HOME/tools/texlive/2025/texmf-dist/doc/info"
 
 # }}}
 
