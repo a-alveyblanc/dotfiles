@@ -37,7 +37,6 @@ require("custom.git-signs-config")
 require("custom.nvim-tree-config")
 require("custom.auto-pairs-config")
 require("custom.toggleterm-config")
-require("custom.nvim-orgmode-config")
 
 -- misc.
 require("custom.startup")

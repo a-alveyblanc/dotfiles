@@ -27,9 +27,9 @@ vim.g.vimtex_compiler_latexmk = {
 --    }
 -- }
 
-vim.api.nvim_create_autocmd('BufWritePost', {
-   pattern = '*.tex',
-   callback = function()
-      vim.cmd('VimtexCompile')
-   end,
-})
+-- vim.api.nvim_create_autocmd('BufWritePost', {
+--    pattern = '*.tex',
+--    callback = function()
+--       vim.cmd('VimtexCompile')
+--    end,
+-- })

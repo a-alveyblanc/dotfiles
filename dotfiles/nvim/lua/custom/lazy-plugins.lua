@@ -15,6 +15,7 @@ require('lazy').setup({
   'tpope/vim-sleuth',
 
   -- qol
+  'vimwiki/vimwiki',
   'nvim-tree/nvim-tree.lua',     -- better file explorer
   'nvim-tree/nvim-web-devicons', -- better icons
   'akinsho/toggleterm.nvim',     -- used for floating terminal
@@ -23,11 +24,6 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim', opts = {} },       -- block comments
 
   -- plugins that require extra stuff when being installed
-  {
-    'nvim-orgmode/orgmode',
-    event = 'VeryLazy',
-  },
-
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
@@ -51,14 +47,6 @@ require('lazy').setup({
     ---@module "ibl"
     ---@type ibl.config
     opts = {},
-  },
-
-  {
-    'epwalsh/obsidian.nvim',
-    dependencies = "nvim-lua/plenary.nvim",
-    version = "*",
-    lazy = true,
-    ft = "markdown"
   },
 
   {

@@ -9,7 +9,7 @@ desktop-notifications = true
 window-vsync = false
 
 # font configs
-# font-family = Iosevka Term
+font-family = Iosevka Term
 font-size = 12
 
 # shell integration
