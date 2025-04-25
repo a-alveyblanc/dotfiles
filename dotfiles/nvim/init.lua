@@ -12,34 +12,34 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- plugins
-require("custom.lazy-plugins")
+require("configs.lazy-plugins")
 
 -- global options
-require("custom.options")
-require("custom.keymaps")
+require("configs.options")
+require("configs.keymaps")
 
 -- theme
-require("custom.theme-config")
-require("custom.lualine-config")
-require("custom.todo-comments-config")
+require("configs.theme-config")
+require("configs.lualine-config")
+require("configs.todo-comments-config")
 
 -- telescope
-require("custom.telescope-config")
+require("configs.telescope-config")
 
 -- lsp-ish stuff
-require("custom.cmp-config")
-require("custom.lsp-config")
-require("custom.treesitter-config")
+require("configs.cmp-config")
+require("configs.lsp-config")
+require("configs.treesitter-config")
 
 -- utility / QoL
-require("custom.vimtex-config")
-require("custom.git-signs-config")
-require("custom.nvim-tree-config")
-require("custom.auto-pairs-config")
-require("custom.toggleterm-config")
+require("configs.vimtex-config")
+require("configs.git-signs-config")
+require("configs.nvim-tree-config")
+require("configs.auto-pairs-config")
+require("configs.toggleterm-config")
 
 -- misc.
-require("custom.startup")
+require("configs.startup")
 
 vim.cmd('source ~/.config/nvim/vim/*')
 vim.lsp.set_log_level("OFF")
