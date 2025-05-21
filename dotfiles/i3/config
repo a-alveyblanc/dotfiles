@@ -42,8 +42,6 @@ exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/gnome/truchet-d
 # compositor
 exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
-# dropbox
-# exec_always --no-startup-id $HOME/.dropbox-dist/dropboxd
 
 # }}}
 
@@ -232,7 +230,8 @@ bindsym $mod+r mode "resize"
 
 # {{{ alt-tab behavior
 
-# bindsym $alt+Tab exec --no-startup-id rofi -show
+bindsym $alt+Tab workspace next
+bindsym ctrl+$alt+Tab workspace prev
 
 # }}}
 
@@ -247,13 +246,7 @@ for_window [class="discord"] move to workspace $ws2
 for_window [class="zoom"] move to workspace $ws1
 for_window [class="zoom"] floating enable
 
-for_window [class="steam"] floating enable
-# for_window [class="steam"] move to workspace $ws4
-
-for_window [class="net-runelite-launcher-Launcher"] floating enable
-for_window [class="net-runelite-launcher-Launcher"] move to workspace $ws1
-for_window [class="net-runelite-client-RuneLite"] floating enable
-for_window [class="net-runelite-client-RuneLite"] move to workspace $ws1
+for_window [class="steam"] move to workspace $ws4
 
 for_window [class="Spotify"] move to workspace $ws2
 

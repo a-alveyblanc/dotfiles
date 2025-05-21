@@ -5,7 +5,6 @@ vim.defer_fn(function()
       'cpp',
       'go',
       'lua',
-      'latex',
       'python',
       'rust',
       'tsx',
@@ -78,3 +77,4 @@ vim.defer_fn(function()
     },
   }
 end, 0)
+

@@ -6,4 +6,5 @@ require("toggleterm").setup({
 })
 
 vim.keymap.set('n', '<C-w>f', '<cmd>2ToggleTerm direction=float<cr>',
-   {noremap = true, silent = true})
+   {noremap = true, silent = true}
+)
