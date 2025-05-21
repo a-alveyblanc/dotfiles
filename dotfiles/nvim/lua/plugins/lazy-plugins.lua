@@ -2,7 +2,7 @@ return({
     "lervag/vimtex",
     "nvim-lualine/lualine.nvim",
     "akinsho/toggleterm.nvim",
-    "NLKNguyen/papercolor-theme",
+    "navarasu/onedark.nvim",
 
     {
         "folke/lazydev.nvim",
@@ -16,6 +16,8 @@ return({
             "neovim/nvim-lspconfig",
         }
     },
+
+    { 'j-hui/fidget.nvim', opts = {} },
 
     {
         "hrsh7th/cmp-nvim-lsp",
