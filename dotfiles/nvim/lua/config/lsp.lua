@@ -4,16 +4,22 @@ local function on_attach(_, bufnr)
         vim.keymap.set(mode, lhs, rhs, opts)
     end
 
-    map("n", "gd", vim.lsp.buf.definition)
+    local builtins = require("telescope.builtin")
+
+    map("n", "gd", builtins.lsp_definitions)
     map("n", "gD", vim.lsp.buf.declaration)
-    map("n", "gi", vim.lsp.buf.implementation)
-    map("n", "gr", vim.lsp.buf.references)
+    map("n", "gi", builtins.lsp_implementations)
+    map("n", "gr", builtins.lsp_references)
 
     map("n", "K", vim.lsp.buf.hover)
 
     map("n", "<leader>rn", vim.lsp.buf.rename)
     map("n", "<leader>ca", vim.lsp.buf.code_action)
     map("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end)
+
+    map("n", "<leader>ws", builtins.lsp_workspace_symbols)
+    map("n", "<leader>ds", builtins.lsp_document_symbols)
+    map("n", "<leader>ts", builtins.treesitter)
 end
 
 local servers = {

@@ -7,7 +7,7 @@ vim.g.maplocalleader = '\\'
 vim.o.tw = 80
 vim.o.colorcolumn = "81"
 
-vim.cmd("hi ColorColumn guibg=black ctermbg=black")
+vim.cmd("hi ColorColumn guibg=grey ctermbg=grey")
 vim.cmd("hi Comment cterm=italic gui=italic")
 
 vim.o.tabstop = 4

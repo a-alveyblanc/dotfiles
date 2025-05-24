@@ -10,6 +10,7 @@ require("config.treesitter")
 require("config.telescope")
 
 -- nice-to-have
+require("config.neotree")
 require("config.lualine")
 require("config.toggleterm")
 require("config.vimtex")

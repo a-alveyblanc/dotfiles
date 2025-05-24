@@ -1,5 +1,6 @@
 require('telescope').setup {
   defaults = {
+    initial_mode = "normal",
     mappings = {
       i = {
         ['<C-u>'] = false,
@@ -95,3 +96,9 @@ vim.keymap.set('n', '<leader>sd',
 vim.keymap.set('n', '<leader>sr',
   require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
+
+vim.keymap.set('n', '<leader>fb',
+    function()
+        require('telescope').extensions.file_browser.file_browser()
+    end
+)
