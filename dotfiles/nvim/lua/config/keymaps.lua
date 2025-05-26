@@ -4,7 +4,7 @@ local t_opts = { silent = true }
 -- {{{ useful commands
 
 vim.keymap.set('n', '<leader><Space>', '<cmd>nohlsearch<cr>', opts)
-vim.keymap.set('n', '<leader>n', '<cmd>Neotree<cr>', opts)
+vim.keymap.set('n', '<leader>n', '<cmd>Neotree toggle<cr>', opts)
 vim.keymap.set('n', '<leader>p', '<cmd>so<cr>', opts)
 vim.keymap.set('n', '<leader>e',
     '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
