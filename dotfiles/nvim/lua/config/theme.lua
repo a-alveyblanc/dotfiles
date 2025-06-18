@@ -35,17 +35,17 @@ require("catppuccin").setup({
     no_bold = false,
     no_underline = false,
     styles = {
-        comments = { "italic" },
-        conditionals = { "italic" },
-        loops = { "italic" },
+        comments = { "italic", },
+        conditionals = { "bold", },
+        loops = { "bold", },
         functions = { "bold", "italic" },
-        keywords = { "bold" },
+        keywords = { "bold", },
         strings = {},
         variables = {},
         numbers = {},
         booleans = {},
-        properties = {},
-        types = { "bold" },
+        properties = { "italic", },
+        types = { "italic", },
         operators = {},
         -- misc = {},
     },
@@ -70,6 +70,4 @@ require("catppuccin").setup({
         },
     },
 })
-
--- setup must be called before loading
 vim.cmd.colorscheme("catppuccin")

@@ -1,3 +1,5 @@
+vim.cmd('set hidden')
+
 -- vim.o.background = 'dark'
 vim.o.termguicolors = true
 
