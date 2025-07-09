@@ -5,14 +5,16 @@ function precmd() {
   vcs_info
 
   NEWLINE=$'\n'
-  PROMPT_LOGIN="%n%{$fg_bold[yellow]%} @ %{$reset_color%}%m%{$reset_color%}"
+  PROMPT_LOGIN="%n%{$fg_bold[yellow]%} @ %{$reset_color%}%m"
   PROMPT_DIR='%2~'
   PROMPT="$PROMPT_LOGIN [$PROMPT_DIR]"
   PROMPT+=" %{$fg[green]%}$CONDA_PROMPT_MODIFIER%{$reset_color%}"
   PROMPT+="$NEWLINE%{$fg[yellow]%}$%{$reset_color%} "
 
-  if [[ -n ${vcs_info_msg_0_} ]] ; then
+  if [[ ! ${vcs_info_msg_0_} = "" ]] ; then
       RPROMPT="[%{$fg[blue]%}${vcs_info_msg_0_}%{$reset_color%}]"
+  else
+      RPROMPT=""
   fi
 }
 
