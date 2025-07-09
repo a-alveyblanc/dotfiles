@@ -29,7 +29,6 @@ cmp.setup({
         { name = "nvim_lsp" },
         { name = "buffer" },
         { name = "path", option = {trailing_slash = true } },
-        { name = "cmdline" },
     },
 
     -- TODO add supertab 
@@ -38,4 +37,21 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
     }),
+})
+
+cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' }
+    }
+})
+
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    }),
+    matching = { disallow_symbol_nonprefix_matching = false }
 })

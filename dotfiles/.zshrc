@@ -1,11 +1,37 @@
 autoload colors && colors
+autoload -Uz vcs_info
 
-NEWLINE=$'\n'
+function precmd() {
+  vcs_info
 
-PROMPT_LOGIN="%n%{$fg_bold[yellow]%} @ %{$reset_color%}%m%{$reset_color%}"
-# PROMPT_LOGIN="%{$fg_bold[white]%}%n%{$fg_bold[yellow]%} @ %{$reset_color%}%{$fg_bold[white]%}%m%{$reset_color%}"
-PROMPT_DIR='[%2~] '
-PROMPT="$PROMPT_LOGIN $PROMPT_DIR$NEWLINE%{$fg[yellow]%}$%{$reset_color%} "
+  NEWLINE=$'\n'
+  PROMPT_LOGIN="%n%{$fg_bold[yellow]%} @ %{$reset_color%}%m%{$reset_color%}"
+  PROMPT_DIR='%2~'
+  PROMPT="$PROMPT_LOGIN [$PROMPT_DIR]"
+  PROMPT+=" %{$fg[green]%}$CONDA_PROMPT_MODIFIER%{$reset_color%}"
+  PROMPT+="$NEWLINE%{$fg[yellow]%}$%{$reset_color%} "
+
+  if [[ -n ${vcs_info_msg_0_} ]] ; then
+      RPROMPT="[%{$fg[blue]%}${vcs_info_msg_0_}%{$reset_color%}]"
+  fi
+}
+
+function +vi-git-remotebranch() {
+    local remote
+
+    remote=${$(git rev-parse --verify ${hook_com[branch]}@{upstream} \
+        --symbolic-full-name 2> /dev/null)/refs\/remotes\/}
+
+    if [[ -n ${remote} ]] ; then
+        hook_com[branch]="${hook_com[branch]} (${remote})"
+    else
+        hook_com[branch]="${hook_com[branch]}"
+    fi
+}
+
+zstyle ":vcs_info:git*+set-message:*" hooks git-remotebranch
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*' formats "%b"
 
 # {{{ zsh options
 
