@@ -51,7 +51,7 @@ floating_modifier $mod
 # {{{ application launch bindings
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id ghostty
+bindsym $mod+Return exec --no-startup-id kitty 
 
 # kill focused window
 bindsym $mod+Shift+q kill

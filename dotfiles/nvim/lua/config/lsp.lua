@@ -43,7 +43,20 @@ local servers = {
             },
         },
     },
-    pyright = {},
+    pyright = {
+        settings = {
+            python = {
+                pythonPath = vim.fn.exepath("python3")
+            }
+        }
+    },
+    -- basedpyright= {
+    --     settings = {
+    --         python = {
+    --             pythonPath = vim.fn.exepath("python3")
+    --         },
+    --     },
+    -- },
     rust_analyzer = {},
 }
 

@@ -12,6 +12,8 @@ vim.o.colorcolumn = "81"
 vim.cmd("hi ColorColumn guibg=grey ctermbg=grey")
 vim.cmd("hi Comment cterm=italic gui=italic")
 
+vim.o.winborder="rounded"
+
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
