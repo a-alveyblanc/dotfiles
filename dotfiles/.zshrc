@@ -71,9 +71,6 @@ SAVEHIST=$HISTSIZE
 # user PATH variables
 export PATH="$HOME/.local/bin:$HOME/flatpak/exports/bin:$HOME/.local/share/flatpak/exports/bin:$PATH"
 
-# choose default LATEST LLVM build
-[ -f "$HOME/dotfiles/scripts/env/llvm-env.sh" ] && . $HOME/dotfiles/scripts/env/llvm-env.sh
-
 # CUDA
 if [[ -d "/opt/cuda" ]]; then 
     export CUDA_HOME="/opt/cuda"
@@ -151,3 +148,4 @@ unset __mamba_setup
 # insert after mamba / conda to capture full base env with these in place
 # WARNING: will override any LLVM tools that exist in conda/mamba packages
 source $HOME/dotfiles/scripts/env/llvm-env.sh
+llvm-use
