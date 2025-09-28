@@ -78,10 +78,13 @@ if [[ -d "/opt/cuda" ]]; then
 fi
 
 # editor selection
-if [[ ! -z "$(which nvim)" ]]; then
+if (( $+commands[nvim] )); then
     export EDITOR="$(which nvim)"
-elif [[ ! -z "$(which vim)" ]]; then
+elif (( $+commands[vim] )); then
     export EDITOR="$(which vim)"
+else
+    echo "Nvim/vim not found, defaulting to nano :("
+    export EDITOR="$(which nano)"
 fi
 export SUDO_EDITOR=$EDITOR
 
