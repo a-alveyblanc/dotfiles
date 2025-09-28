@@ -30,12 +30,13 @@ packages="
 "
 
 my_packages="
+    grudge \
     loopy \
     meshmode \
     modepy \
-    grudge \
+    namedisl
     pytools \
-    pytato
+    pytato \
 "
 
 hash -r;

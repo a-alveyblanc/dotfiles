@@ -65,19 +65,24 @@ SAVEHIST=$HISTSIZE
 # {{{ exports
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/flatpak/exports/bin:$HOME/.local/share/flatpak/exports/bin"
-export PATH="$PATH:$HOME/tools/texlive/2025/bin/x86_64-linux"
-export EDITOR="$HOME/.local/bin/nvim"
+export PATH="$PATH:/usr/local/texlive/2025/bin/x86_64-linux"
+export PATH="$PATH:/opt/cuda/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64"
+export LIBRARY_PATH="$LIBRARY_PATH:/opt/cuda/lib64"
+
+export EDITOR="$(which nvim)"
 export SUDO_EDITOR=$EDITOR
-export MANPAGER="nvim --appimage-extract-and-run +Man!"
+# export MANPAGER="nvim --appimage-extract-and-run +Man!"
 export LLVM_BUILD_PATH="$HOME/tools/llvm-project/build"
 
-export MANPATH="$MANPATH:$HOME/tools/texlive/2025/texmf-dist/doc/man"
-export INFOPATH="$INFOPATH:$HOME/tools/texlive/2025/texmf-dist/doc/info"
+export MANPATH="$MANPATH:/usr/local/texlive/2025/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:usr/local/texlive/2025/texmf-dist/doc/info"
 
 # }}}
 
 # {{{ aliases
 
+alias s="kitten ssh"
 alias rsrun="$HOME/dotfiles/scripts/rsrun.sh"
 alias vi="$(which nvim)"
 alias ls='ls --color'
@@ -95,42 +100,8 @@ alias pyclg='PYOPENCL_CTX=1 python'
 alias jremote="$HOME/dotfiles/scripts/launch_jupyter.sh"
 
 # }}}
-
-# {{{ zsh tools
-
-# {{{ zshcompletion
-
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' completions 1
-zstyle ':completion:*' condition 1
-zstyle ':completion:*' glob 1
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' match-original both
-zstyle ':completion:*' max-errors 2
-zstyle ':completion:*' menu select=0
-zstyle ':completion:*' substitute 1
-zstyle :compinstall filename '$HOME/.zshrc'
-
-zstyle ':completion:*' list-colors no=00 fi=00 di=01\;34 \
-  ln=target pi=40\;33 so=01\;35 do=01\;35 bd=40\;33\;01 cd=40\;33\;01 \
-  or=40\;31\;01 ex=01\;32
-
-autoload -Uz compinit
-compinit
-
-# }}}
-
-source $HOME/zshtools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# {{{ fzf
-
-fpath=($HOME/zshtools/zsh-completions $fpath)
-
-[ -f ~/zshtools/.fzf.zsh ] && source ~/zshtools/.fzf.zsh
-
-# }}}
-
-# }}}
+#
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -145,12 +116,21 @@ else
     fi
 fi
 unset __conda_setup
-
-if [ -f "/home/aj/miniforge3/etc/profile.d/mamba.sh" ]; then
-    . "/home/aj/miniforge3/etc/profile.d/mamba.sh"
-fi
 # <<< conda initialize <<<
 
 # :shrug:
 source "$HOME/.cargo/env"
 source "/home/aj/.deno/env"
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba shell init' !!
+export MAMBA_EXE='/home/aj/miniforge3/bin/mamba';
+export MAMBA_ROOT_PREFIX='/home/aj/miniforge3';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
