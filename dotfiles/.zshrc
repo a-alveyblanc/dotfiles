@@ -1,6 +1,8 @@
 autoload colors && colors
 autoload -Uz vcs_info
 
+# {{{ prompt + vcs config 
+
 function precmd() {
   vcs_info
 
@@ -35,6 +37,8 @@ zstyle ":vcs_info:git*+set-message:*" hooks git-remotebranch
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*' formats "%b"
 
+# }}}
+
 # {{{ zsh options
 
 setopt auto_cd
@@ -64,19 +68,29 @@ SAVEHIST=$HISTSIZE
 
 # {{{ exports
 
-export PATH="$PATH:$HOME/.local/bin:$HOME/flatpak/exports/bin:$HOME/.local/share/flatpak/exports/bin"
-export PATH="$PATH:/usr/local/texlive/2025/bin/x86_64-linux"
-export PATH="$PATH:/opt/cuda/bin"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64"
-export LIBRARY_PATH="$LIBRARY_PATH:/opt/cuda/lib64"
+# user PATH variables
+export PATH="$HOME/.local/bin:$HOME/flatpak/exports/bin:$HOME/.local/share/flatpak/exports/bin:$PATH"
+
+# choose default LATEST LLVM build
+[ -f "$HOME/dotfiles/scripts/env/llvm-env.sh" ] && . $HOME/dotfiles/scripts/env/llvm-env.sh
+
+# CUDA
+if [[ -d "/opt/cuda" ]]; then 
+    export CUDA_HOME="/opt/cuda"
+    export PATH="$CUDA_HOME/bin:$PATH"
+    export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
+    export LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
+fi
+
+export LLVM_BUILD_PATH="$HOME/tools/llvm-project/build"
 
 export EDITOR="$(which nvim)"
 export SUDO_EDITOR=$EDITOR
-# export MANPAGER="nvim --appimage-extract-and-run +Man!"
-export LLVM_BUILD_PATH="$HOME/tools/llvm-project/build"
 
-export MANPATH="$MANPATH:/usr/local/texlive/2025/texmf-dist/doc/man"
-export INFOPATH="$INFOPATH:usr/local/texlive/2025/texmf-dist/doc/info"
+# tex
+export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
+export MANPATH="/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH"
+export INFOPATH="/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH"
 
 # }}}
 
@@ -94,14 +108,21 @@ alias dcache="rm -rf $HOME/.cache/pytools/pdict* $HOME/.cache/pyopencl $HOME/.ca
 alias pydev='conda activate dev'
 alias pycl='PYOPENCL_CTX=0:0 python'
 alias pyclt='PYOPENCL_TEST=0:0 python -m pytest'
-alias pyclg='PYOPENCL_CTX=1 python'
 
 # script aliases
 alias jremote="$HOME/dotfiles/scripts/launch_jupyter.sh"
 
 # }}}
-#
+
+# {{{ plugins
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+
+# }}}
+
+# !----------------------------------------------------------------------------!
+# !-------------- anything below this is added by external tools --------------!
+# !----------------------------------------------------------------------------!
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -117,10 +138,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# :shrug:
-source "$HOME/.cargo/env"
-source "/home/aj/.deno/env"
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba shell init' !!
