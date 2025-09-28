@@ -120,10 +120,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # }}}
 
-# !----------------------------------------------------------------------------!
-# !-------------- anything below this is added by external tools --------------!
-# !----------------------------------------------------------------------------!
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/aj/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -151,3 +147,7 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+# insert after mamba / conda to capture full base env with these in place
+# WARNING: will override any LLVM tools that exist in conda/mamba packages
+source $HOME/dotfiles/scripts/env/llvm-env.sh
