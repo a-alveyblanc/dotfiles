@@ -1,6 +1,29 @@
 autoload colors && colors
 autoload -Uz vcs_info
 
+setopt auto_cd
+setopt no_menu_complete
+setopt auto_menu
+setopt correct
+setopt multios
+setopt extended_glob
+setopt no_hup
+setopt no_check_jobs
+setopt hist_ignore_dups
+setopt no_nomatch
+setopt completeinword
+setopt listtypes
+setopt long_list_jobs
+setopt notify
+setopt share_history
+setopt prompt_subst
+
+unsetopt HIST_VERIFY
+
+HISTFILE=~/.zshhistory
+HISTSIZE=10000
+SAVEHIST=$HISTSIZE
+
 # {{{ prompt + vcs config 
 
 function precmd() {
@@ -39,33 +62,6 @@ zstyle ':vcs_info:git*' formats "%b"
 
 # }}}
 
-# {{{ zsh options
-
-setopt auto_cd
-setopt no_menu_complete
-setopt auto_menu
-setopt correct
-setopt multios
-setopt extended_glob
-setopt no_hup
-setopt no_check_jobs
-setopt hist_ignore_dups
-setopt no_nomatch
-setopt completeinword
-setopt listtypes
-setopt long_list_jobs
-setopt notify
-setopt share_history
-setopt prompt_subst
-
-unsetopt HIST_VERIFY
-
-HISTFILE=~/.zshhistory
-HISTSIZE=10000
-SAVEHIST=$HISTSIZE
-
-# }}}
-
 # {{{ exports
 
 # user PATH variables
@@ -77,17 +73,24 @@ if [[ -d "/opt/cuda" ]]; then
     export PATH="$CUDA_HOME/bin:$PATH"
     export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
     export LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
+    echo "CUDA found at $CUDA_HOME"
+    command -v nvcc >/dev/null && nvcc --version | tail -n1
 fi
 
-export LLVM_BUILD_PATH="$HOME/tools/llvm-project/build"
-
-export EDITOR="$(which nvim)"
+# editor selection
+if [[ ! -z "$(which nvim)" ]]; then
+    export EDITOR="$(which nvim)"
+elif [[ ! -z "$(which vim)" ]]; then
+    export EDITOR="$(which vim)"
+fi
 export SUDO_EDITOR=$EDITOR
 
 # tex
-export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
-export MANPATH="/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH"
-export INFOPATH="/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH"
+if [[ -d "/usr/local/texlive" ]]; then
+    export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
+    export MANPATH="/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH"
+    export INFOPATH="/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH"
+fi
 
 # }}}
 
@@ -95,7 +98,7 @@ export INFOPATH="/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH"
 
 alias s="kitten ssh"
 alias rsrun="$HOME/dotfiles/scripts/rsrun.sh"
-alias vi="$(which nvim)"
+alias vi="$EDITOR"
 alias ls='ls --color'
 alias l='ls -al'
 alias dvis='rm *.sqlite *.pvtu *.vtu'
