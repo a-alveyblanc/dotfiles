@@ -14,6 +14,7 @@ require("config.neotree")
 require("config.lualine")
 require("config.toggleterm")
 require("config.vimtex")
+require("config.godbolt")
 
 -- theme
 require("config.theme")

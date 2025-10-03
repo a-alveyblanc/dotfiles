@@ -2,6 +2,7 @@ return({
     "lervag/vimtex",
     "nvim-lualine/lualine.nvim",
     "akinsho/toggleterm.nvim",
+    "p00f/godbolt.nvim",
 
     -- themes
     "navarasu/onedark.nvim",
