@@ -153,5 +153,5 @@ unset __mamba_setup
 
 # insert after mamba / conda to capture full base env with these in place
 # WARNING: will override any LLVM tools that exist in conda/mamba packages
-source $HOME/dotfiles/scripts/env/llvm-env.sh
-llvm-use
+# source $HOME/dotfiles/scripts/env/llvm-env.sh
+# llvm-use

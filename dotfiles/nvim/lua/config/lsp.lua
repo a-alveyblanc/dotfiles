@@ -23,15 +23,6 @@ local function on_attach(_, bufnr)
 end
 
 local servers = {
-    clangd = {
-        cmd = {
-            "clangd",
-            "--background-index",
-            "--clang-tidy",
-            "--enable-config",
-            "--completion-style=detailed",
-        },
-    },
     html = { filetypes = { "html", "twig", "hbs" }, },
     lua_ls = {
         Lua = {
@@ -84,4 +75,15 @@ vim.diagnostic.config({
     underline = true,
     update_in_insert = false,
     severity_sort = true,
+})
+
+vim.lsp.enable("clangd")
+vim.lsp.config("clangd", {
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--clang-tidy",
+        "--enable-config",
+        "--completion-style=detailed",
+    }
 })
