@@ -3,6 +3,7 @@ vim.defer_fn(function()
     ensure_installed = {
       'c',
       'cpp',
+      'cuda',
       'go',
       'lua',
       'python',
