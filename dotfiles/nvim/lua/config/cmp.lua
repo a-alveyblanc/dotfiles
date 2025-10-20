@@ -27,7 +27,6 @@ cmp.setup({
     end,
     sources = {
         { name = "nvim_lsp" },
-        { name = "buffer" },
         { name = "path", option = {trailing_slash = true } },
     },
 
@@ -37,6 +36,14 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
     }),
+})
+
+cmp.setup.filetype({'markdown', 'text'}, {
+    sources = {
+        { name = "buffer" },
+        { name = "nvim_lsp" },
+        { name = "path" },
+    }
 })
 
 cmp.setup.cmdline({ '/', '?' }, {
