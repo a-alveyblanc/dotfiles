@@ -4,14 +4,15 @@ local t_opts = { silent = true }
 -- {{{ useful commands
 
 vim.keymap.set('n', '<leader><Space>', '<cmd>nohlsearch<cr>', opts)
-vim.keymap.set('n', '<leader>n', '<cmd>Neotree toggle<cr>', opts)
+vim.keymap.set('n', '<leader>n', '<cmd>Neotree<cr>', opts)
+vim.keymap.set('n', '<leader>N', '<cmd>Neotree toggle<cr>', opts)
 vim.keymap.set('n', '<leader>p', '<cmd>so<cr>', opts)
 vim.keymap.set('n', '<leader>e',
     '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 
 -- }}}
 
--- {{{ text manipulation 
+-- {{{ text manipulation
 
 -- it hurts that this isn't default
 vim.keymap.set('n', 'Y', 'yy', { noremap = true })
@@ -27,7 +28,7 @@ vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv", opts)
 vim.keymap.set('x', '<A-j>', ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set('x', '<A-k>', ":m '<-2<CR>gv=gv", opts)
 
--- do not override data in p register 
+-- do not override data in p register
 vim.keymap.set('v', 'p', '"_dP', opts)
 
 -- }}}

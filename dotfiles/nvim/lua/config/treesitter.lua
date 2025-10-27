@@ -18,7 +18,7 @@ vim.defer_fn(function()
       'markdown_inline',
     },
 
-    auto_install = false,
+    auto_install = true,
 
     highlight = { enable = true },
     indent = {

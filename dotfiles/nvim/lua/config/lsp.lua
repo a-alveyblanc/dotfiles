@@ -12,12 +12,13 @@ local function on_attach(_, bufnr)
     map("n", "gr", builtins.lsp_references)
 
     map("n", "K", vim.lsp.buf.hover)
+    map("n", "<C-k>", vim.lsp.buf.signature_help)
 
     map("n", "<leader>rn", vim.lsp.buf.rename)
     map("n", "<leader>ca", vim.lsp.buf.code_action)
     map("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end)
 
-    map("n", "<leader>ws", builtins.lsp_workspace_symbols)
+    map("n", "<leader>ws", builtins.lsp_dynamic_workspace_symbols)
     map("n", "<leader>ds", builtins.lsp_document_symbols)
     map("n", "<leader>ts", builtins.treesitter)
 end
@@ -79,11 +80,15 @@ vim.diagnostic.config({
 
 vim.lsp.enable("clangd")
 vim.lsp.config("clangd", {
+    on_attach = on_attach,
     cmd = {
         "clangd",
         "--background-index",
         "--clang-tidy",
         "--enable-config",
         "--completion-style=detailed",
+    },
+    filetypes = {
+        "c", "cpp", "objc", "objcpp", "cuda", "cu"
     }
 })

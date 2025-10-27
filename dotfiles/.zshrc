@@ -24,7 +24,7 @@ HISTFILE=~/.zshhistory
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 
-# {{{ prompt + vcs config 
+# {{{ prompt + vcs config
 
 function precmd() {
   vcs_info
@@ -68,7 +68,7 @@ zstyle ':vcs_info:git*' formats "%b"
 export PATH="$HOME/.local/bin:$HOME/flatpak/exports/bin:$HOME/.local/share/flatpak/exports/bin:$PATH"
 
 # CUDA
-if [[ -d "/opt/cuda" ]]; then 
+if [[ -d "/opt/cuda" ]]; then
     export CUDA_HOME="/opt/cuda"
     export PATH="$CUDA_HOME/bin:$PATH"
     export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
@@ -117,9 +117,10 @@ alias jremote="$HOME/dotfiles/scripts/launch_jupyter.sh"
 
 # }}}
 
-# {{{ plugins
+# {{{ plugins/utilities/etc.
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source <(fzf --zsh)
 
 # }}}
 
