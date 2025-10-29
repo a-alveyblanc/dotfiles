@@ -40,11 +40,16 @@ llvm-env-restore-base-env() {
     done
 }
 
+which-llvm() {
+    echo "Using LLVM at: $__MY_LLVM_PREFIX"
+    command -v clang >/dev/null && clang --version | head -n1
+}
 
 llvm-use() {
     llvm-env-capture-base-env
 
     local prefix="${1:-$HOME/tools/llvm-project/installation/latest-nvptx-x86-clang-mlir-lld-extras}"
+    export __MY_LLVM_PREFIX="$prefix"
 
     export PATH="$prefix/bin:$PATH"
     export LD_LIBRARY_PATH="$prefix/lib:$prefix/lib64:${LD_LIBRARY_PATH:-}"
@@ -54,14 +59,18 @@ llvm-use() {
     export CMAKE_PREFIX_PATH="$prefix:$CMAKE_PREFIX_PATH"
     export MANPATH="$PREFIX/share/man:${MANPATH:-}"
 
-    export LLVM_DIR="$prefix/lib/cmake/llvm"
-    export MLIR_DIR="$prefix/lib/cmake/mlir"
+    if [[ -d "$prefix/lib/cmake/llvm" ]]; then
+        export LLVM_DIR="$prefix/lib/cmake/llvm"
+    fi
+    if [[ -d "$prefix/lib/cmake/mlir" ]]; then
+        export MLIR_DIR="$prefix/lib/cmake/mlir"
+    fi
 
-    export LD=lld
-    export LDFLAGS="-fuse-ld=lld ${LDFLAGS:-}"
+    command -v lld >/dev/null && \
+        export LD=lld && \
+        export LDFLAGS="-fuse-ld=lld ${LDFLAGS:-}"
 
-    echo "Using LLVM at: $prefix"
-    command -v clang >/dev/null && clang --version | head -n1
+    which-llvm
 }
 
 llvm-off () {
