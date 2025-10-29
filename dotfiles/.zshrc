@@ -15,7 +15,7 @@ setopt auto_cd \
        listtypes \
        long_list_jobs \
        notify \
-       prompt_subst \
+       prompt_subst
 
 unsetopt HIST_VERIFY
 [[ $- == *i* ]] && setopt share_history
