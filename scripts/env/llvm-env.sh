@@ -51,24 +51,25 @@ llvm-use() {
     local prefix="${1:-$HOME/tools/llvm-project/installation/latest-nvptx-x86-clang-mlir-lld-extras}"
     export __MY_LLVM_PREFIX="$prefix"
 
-    export PATH="$prefix/bin:$PATH"
-    export LD_LIBRARY_PATH="$prefix/lib:$prefix/lib64:${LD_LIBRARY_PATH:-}"
-    export LIBRARY_PATH="$prefix/lib:$prefix/lib64:${LIBRARY_PATH:-}"
-    export CPATH="$prefix/include:${CPATH:-}"
-    export PKG_CONFIG_PATH="$prefix/lib/pkgconfig:${PKG_CONFIG_PATH:-}"
-    export CMAKE_PREFIX_PATH="$prefix:$CMAKE_PREFIX_PATH"
-    export MANPATH="$PREFIX/share/man:${MANPATH:-}"
+    _prepend PATH              "$prefix/bin"
+    _prepend LD_LIBRARY_PATH   "$prefix/lib"
+    _prepend LD_LIBRARY_PATH   "$prefix/lib64"
+    _prepend LIBRARY_PATH      "$prefix/lib"
+    _prepend LIBRARY_PATH      "$prefix/lib64"
+    _prepend CPATH             "$prefix/include"
+    _prepend PKG_CONFIG_PATH   "$prefix/lib/pkgconfig"
+    _prepend CMAKE_PREFIX_PATH "$prefix"
+    _prepend MANPATH           "$prefix/share/man"
 
-    if [[ -d "$prefix/lib/cmake/llvm" ]]; then
+    [[ -d "$prefix/lib/cmake/llvm" ]] && \
         export LLVM_DIR="$prefix/lib/cmake/llvm"
-    fi
-    if [[ -d "$prefix/lib/cmake/mlir" ]]; then
+    [[ -d "$prefix/lib/cmake/mlir" ]] && \
         export MLIR_DIR="$prefix/lib/cmake/mlir"
-    fi
 
-    command -v lld >/dev/null && \
-        export LD=lld && \
-        export LDFLAGS="-fuse-ld=lld ${LDFLAGS:-}"
+    if command -v lld >/dev/null; then
+      export LD=lld
+      export LDFLAGS="-fuse-ld=lld ${LDFLAGS:-}"
+    fi
 
     which-llvm
 }

@@ -67,44 +67,37 @@ zstyle ':vcs_info:git*' formats "%b"
 # {{{ exports
 
 _prepend() {
-    local _varname="$1"
-    local _dirname="$2"
+  local _var="$1" _dir="$2" cur
+  [[ -d "$_dir" ]] || return 0
 
-    if [[ -d "$_newdir" ]]; then
-        return 0
-    fi
-
-    typeset -g _ref="$_varname"
-
-    if [[ -z "$_ref" ]]; then
-        _ref="$_newdir"
-        return 0
-    fi
-
-    if [[ ":$_ref:" != *":$_newdir:"* ]]; then
-        _ref="$_newdir:$_ref"
-    fi
+  cur="${(P)_var}"
+  if [[ -z "$cur" ]]; then
+    typeset -g "$_var=$_dir"
+  elif [[ ":$cur:" != *":$_dir:"* ]]; then
+    typeset -g "$_var=$_dir:$cur"
+  fi
 }
 
 _prepend PATH "$HOME/.local/bin"
 _prepend PATH "$HOME/flatpak/exports/bin"
 _prepend PATH "$HOME/.local/share/flatpak/exports/bin"
 
-if [[ -z "$CUDA_HOME" ]]; then
-    for _cuda_root in /opt/cuda /usr/local/cuda "$HOME/cuda"; do
-        if [[ -d "$_cuda_root" ]]; then
-            export CUDA_HOME="$_cuda_root"
-            break
-        fi
+if [[ "$OSTYPE" == linux* && -z ${CUDA_HOME:-} ]]; then
+    for _cuda_root in /opt/cuda /usr/local/cuda "$HOME/cuda" /usr/local/cuda-[0-9]*; do
+        [[ -d "$_cuda_root" ]] || continue
+        export CUDA_HOME="$_cuda_root"
+        break
     done
-
-    if [[ -d "$CUDA_HOME/lib64" ]]; then
-        _prepend LD_LIBRARY_PATH "$CUDA_HOME/lib64"
-        _prepend LIBRARY_PATH    "$CUDA_HOME/lib"
-    fi
-
     unset _cuda_root
 fi
+
+if [[ -n ${CUDA_HOME:-} ]]; then
+  _prepend PATH "$CUDA_HOME/bin"
+  if [[ -d "$CUDA_HOME/lib64" ]]; then
+      _prepend LD_LIBRARY_PATH "$CUDA_HOME/lib64"
+  fi
+fi
+
 
 # editor selection
 if (( $+commands[nvim] )); then
