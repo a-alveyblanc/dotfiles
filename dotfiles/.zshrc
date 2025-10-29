@@ -147,22 +147,6 @@ alias pyclt='PYOPENCL_TEST=0:0 python -m pytest'
 
 # }}}
 
-# {{{ plugins/utilities/etc.
-
-if [[ -d "/usr/share/zsh/plugins" ]]; then
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
-if command -v fzf >/dev/null; then
-    if fzf --zsh >/dev/null; then
-        source <(fzf --zsh)
-    elif [[ -r ~/.fzf.zsh ]]; then
-        source ~/.fzf.zsh
-    fi
-fi
-
-# }}}
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/aj/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -198,3 +182,40 @@ if [[ -r "$HOME/dotfiles/scripts/env/llvm-env.sh" ]]; then
     source "$HOME/dotfiles/scripts/env/llvm-env.sh"
     command -v llvm-use >/dev/null && llvm-use
 fi
+
+# {{{ plugins/utilities/etc.
+
+if [[ "$HOST" == ("benign"|"farewell") ]]; then
+    _plugins_dir="$HOME/.zshplugins"
+    [[ ! -d $_plugins_dir ]] && mkdir $_plugins_dir
+
+    local _plugins=(
+        zsh-autosuggestions
+        zsh-syntax-highlighting
+    )
+
+    export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+    for _plugin in ${_plugins[@]}; do
+        if [[ ! -d "$_plugins_dir/$_plugin" ]]; then
+            git clone -q --depth 1 https://github.com/zsh-users/"$_plugin" \
+                "$_plugins_dir/$_plugin"
+        fi
+        # guard against clone failures
+        if [[ -d "$_plugins_dir/$_plugin" ]]; then
+            git -C "$_plugins_dir/$_plugin" fetch -q --depth 1 origin && \
+            git -C "$_plugins_dir/$_plugin" reset -q --hard origin/HEAD
+            source "$_plugins_dir/$_plugin/$_plugin.zsh"
+        fi
+    done
+fi
+
+if command -v fzf >/dev/null; then
+    if fzf --zsh >/dev/null; then
+        source <(fzf --zsh)
+    elif [[ -r ~/.fzf.zsh ]]; then
+        source ~/.fzf.zsh
+    fi
+fi
+
+# }}}
