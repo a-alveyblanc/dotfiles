@@ -81,6 +81,7 @@ _prepend() {
 _prepend PATH "$HOME/.local/bin"
 _prepend PATH "$HOME/flatpak/exports/bin"
 _prepend PATH "$HOME/.local/share/flatpak/exports/bin"
+_prepend PATH "$HOME/aj/.pixi/bin"
 
 if [[ "$OSTYPE" == linux* && -z ${CUDA_HOME:-} ]]; then
     for _cuda_root in /opt/cuda /usr/local/cuda "$HOME/cuda" /usr/local/cuda-[0-9]*; do
