@@ -30,12 +30,14 @@ cmp.setup({
         { name = "path", option = {trailing_slash = true } },
     },
 
-    -- TODO add supertab 
+    -- TODO add supertab
     mapping = cmp.mapping.preset.insert({
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
     }),
+
+    preselect = cmp.PreselectMode.None
 })
 
 cmp.setup.filetype({'markdown', 'text'}, {

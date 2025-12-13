@@ -9,16 +9,17 @@ desktop-notifications = true
 window-vsync = false
 
 # font configs
-font-family = Iosevka Term 
-font-size = 12
+font-family = Iosevka Term
+font-size = 13
 
 # shell integration
 shell-integration-features = no-cursor
 
 # window settings
 gtk-titlebar = false
+window-decoration = server
 
-# theme = catppuccin-macchiato 
+# theme = catppuccin-macchiato
 
 # keybinds
 # don't override tmux pane switching keybinds

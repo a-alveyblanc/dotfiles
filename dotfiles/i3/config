@@ -51,7 +51,7 @@ floating_modifier $mod
 # {{{ application launch bindings
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id /home/aj/.local/bin/kitty 
+bindsym $mod+Return exec --no-startup-id ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -63,7 +63,7 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i'
 bindsym $mod+n exec --no-startup-id thunar
 
 # open browser
-bindsym $mod+b exec --no-startup-id brave 
+bindsym $mod+b exec --no-startup-id brave
 
 # lock screen
 bindsym ctrl+$mod+l exec --no-startup-id i3lock --color 000000
@@ -250,8 +250,9 @@ for_window [class="matplotlib"] floating enable
 for_window [class="Matplotlib"] floating enable
 for_window [class="graphviz"] floating enable
 for_window [class="Graphviz"] floating enable
-
 for_window [class="steam"] floating enable
+for_window [class="runelite"] floating enable
+for_window [class="Runelite"] floating enable
 
 
 # }}}

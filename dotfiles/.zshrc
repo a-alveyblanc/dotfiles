@@ -213,3 +213,12 @@ if command -v fzf >/dev/null; then
 fi
 
 # }}}
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/aj/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
