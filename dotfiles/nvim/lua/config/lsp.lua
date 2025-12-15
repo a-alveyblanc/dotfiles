@@ -21,6 +21,12 @@ local function on_attach(_, bufnr)
     map("n", "<leader>ws", builtins.lsp_dynamic_workspace_symbols)
     map("n", "<leader>ds", builtins.lsp_document_symbols)
     map("n", "<leader>ts", builtins.treesitter)
+
+    vim.api.nvim_create_user_command("InlayHintsToggle", function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    end, {})
+
+    map("n", "<leader>ih", "<cmd>InlayHintsToggle<cr>")
 end
 
 local servers = {
@@ -45,7 +51,7 @@ local servers = {
     basedpyright = {
         settings = {
             python = {
-                pythonPath = vim.fn.exepath("python3")
+                pythonPath = vim.fn.exepath("python3"),
             }
         }
     },
