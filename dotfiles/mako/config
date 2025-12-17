@@ -1,0 +1,12 @@
+font=Iosevka Term 14
+
+background-color=#181a1f
+border-color=#abb2bf
+text-color=#abb2bf
+
+border-radius=8
+text-alignment=center
+anchor=top-center
+
+max-history=5
+default-timeout=10000
