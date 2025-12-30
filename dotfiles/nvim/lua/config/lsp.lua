@@ -12,7 +12,7 @@ local function on_attach(_, bufnr)
     map("n", "gr", builtins.lsp_references)
 
     map("n", "K", vim.lsp.buf.hover)
-    map("n", "<C-k>", vim.lsp.buf.signature_help)
+    -- map("n", "<C-k>", vim.lsp.buf.signature_help)
 
     map("n", "<leader>rn", vim.lsp.buf.rename)
     map("n", "<leader>ca", vim.lsp.buf.code_action)

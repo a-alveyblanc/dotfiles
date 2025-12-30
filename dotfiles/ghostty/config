@@ -49,12 +49,12 @@ keybind = ctrl+alt+seven=goto_tab:7
 keybind = ctrl+alt+eight=goto_tab:8
 keybind = ctrl+alt+nine=goto_tab:9
 
-keybind = ctrl+shift+h=new_split:left
-keybind = ctrl+shift+j=new_split:down
-keybind = ctrl+shift+k=new_split:up
-keybind = ctrl+shift+l=new_split:right
-keybind = ctrl+shift+e=equalize_splits
-keybind = ctrl+shift+space=toggle_tab_overview
+# keybind = ctrl+shift+h=new_split:left
+# keybind = ctrl+shift+j=new_split:down
+# keybind = ctrl+shift+k=new_split:up
+# keybind = ctrl+shift+l=new_split:right
+# keybind = ctrl+shift+e=equalize_splits
+# keybind = ctrl+shift+space=toggle_tab_overview
 
 keybind = alt+h=goto_split:left
 keybind = alt+j=goto_split:bottom
