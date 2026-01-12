@@ -7,6 +7,7 @@ cursor-style = block
 cursor-style-blink = false
 desktop-notifications = true
 window-vsync = false
+shell-integration-features = ssh-terminfo
 
 # font configs
 font-family = Iosevka Term
@@ -23,16 +24,26 @@ window-decoration = server
 
 # keybinds
 # don't override tmux pane switching keybinds
-keybind = alt+zero=unbind
-keybind = alt+one=unbind
-keybind = alt+two=unbind
-keybind = alt+three=unbind
-keybind = alt+four=unbind
-keybind = alt+five=unbind
-keybind = alt+six=unbind
-keybind = alt+seven=unbind
-keybind = alt+eight=unbind
-keybind = alt+nine=unbind
+keybind = alt+1=unbind
+keybind = alt+2=unbind
+keybind = alt+3=unbind
+keybind = alt+4=unbind
+keybind = alt+5=unbind
+keybind = alt+6=unbind
+keybind = alt+7=unbind
+keybind = alt+8=unbind
+keybind = alt+9=unbind
+keybind = alt+0=unbind
+
+keybind = alt+digit_1=unbind
+keybind = alt+digit_2=unbind
+keybind = alt+digit_3=unbind
+keybind = alt+digit_4=unbind
+keybind = alt+digit_5=unbind
+keybind = alt+digit_6=unbind
+keybind = alt+digit_7=unbind
+keybind = alt+digit_8=unbind
+
 keybind = ctrl+shift+e=unbind
 keybind = alt+h=unbind
 keybind = alt+j=unbind
@@ -48,13 +59,6 @@ keybind = ctrl+alt+six=goto_tab:6
 keybind = ctrl+alt+seven=goto_tab:7
 keybind = ctrl+alt+eight=goto_tab:8
 keybind = ctrl+alt+nine=goto_tab:9
-
-# keybind = ctrl+shift+h=new_split:left
-# keybind = ctrl+shift+j=new_split:down
-# keybind = ctrl+shift+k=new_split:up
-# keybind = ctrl+shift+l=new_split:right
-# keybind = ctrl+shift+e=equalize_splits
-# keybind = ctrl+shift+space=toggle_tab_overview
 
 keybind = alt+h=goto_split:left
 keybind = alt+j=goto_split:bottom
