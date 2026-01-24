@@ -122,7 +122,9 @@ if [[ -d "/usr/local/texlive/2025" ]]; then
     _prepend INFOPATH "/usr/local/texlive/2025/texmf-dist/doc/info"
 fi
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+if [[ -z "$SSH_AUTH_SOCK" ]]; then
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
 
 # }}}
 

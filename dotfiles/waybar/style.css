@@ -1,0 +1,27 @@
+* {
+	all: initial;
+}
+
+menu,
+popover,
+.menu,
+context-menu,
+GtkMenu {
+  background-color: @main-bg;
+}
+
+menuitem {
+  padding: 6px 10px;
+}
+
+menuitem:hover {
+  background-color: rgba(70, 70, 70, 1);
+}
+
+@import "current-theme.css";
+@import "styles/fonts.css";
+@import "styles/global.css";
+@import "styles/modules-center.css";
+@import "styles/modules-left.css";
+@import "styles/modules-right.css";
+@import "styles/states.css";
