@@ -4,6 +4,12 @@ return({
     "akinsho/toggleterm.nvim",
     "p00f/godbolt.nvim",
 
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = true
+    },
+
     -- themes
     "navarasu/onedark.nvim",
     "folke/tokyonight.nvim",

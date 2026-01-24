@@ -82,6 +82,7 @@ _prepend PATH "$HOME/.local/bin"
 _prepend PATH "$HOME/flatpak/exports/bin"
 _prepend PATH "$HOME/.local/share/flatpak/exports/bin"
 _prepend PATH "$HOME/.pixi/bin"
+_prepend PATH "$HOME/.cargo/bin"
 
 if [[ "$OSTYPE" == linux* && -z ${CUDA_HOME:-} ]]; then
     for _cuda_root in /opt/cuda /usr/local/cuda "$HOME/cuda" /usr/local/cuda-[0-9]*; do
@@ -120,6 +121,8 @@ if [[ -d "/usr/local/texlive/2025" ]]; then
     _prepend MANPATH  "/usr/local/texlive/2025/texmf-dist/doc/man"
     _prepend INFOPATH "/usr/local/texlive/2025/texmf-dist/doc/info"
 fi
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # }}}
 
@@ -169,14 +172,6 @@ fi
 unset __mamba_setup
 # <<< mamba initialize <<<
 
-# insert after mamba / conda to capture full base env with these in place
-# WARNING: will override any LLVM tools that exist in conda/mamba packages
-
-if [[ -r "$HOME/dotfiles/scripts/env/llvm-env.sh" ]]; then
-    source "$HOME/dotfiles/scripts/env/llvm-env.sh"
-    command -v llvm-use >/dev/null && llvm-use
-fi
-
 # {{{ plugins/utilities/etc.
 
 if [[ "$HOST" == ("benign"|"farewell") ]]; then
@@ -214,11 +209,10 @@ fi
 
 # }}}
 
-# >>> juliaup initialize >>>
+# insert after mamba / conda to capture full base env with these in place
+# WARNING: will override any LLVM tools that exist in conda/mamba packages
 
-# !! Contents within this block are managed by juliaup !!
-
-path=('/home/aj/.juliaup/bin' $path)
-export PATH
-
-# <<< juliaup initialize <<<
+if [[ -r "$HOME/dotfiles/scripts/env/llvm-env.sh" ]]; then
+    source "$HOME/dotfiles/scripts/env/llvm-env.sh"
+    command -v llvm-use >/dev/null && llvm-use
+fi
