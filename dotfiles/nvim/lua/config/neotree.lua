@@ -10,4 +10,8 @@ require("neo-tree").setup({
         winbar = true,
         statusline = false,
     },
+
+    window = {
+        width = 28
+    },
 })
