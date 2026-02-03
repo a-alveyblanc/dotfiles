@@ -10,6 +10,12 @@ vim.keymap.set('n', '<leader>p', '<cmd>so<cr>', opts)
 vim.keymap.set('n', '<leader>e',
     '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 
+vim.keymap.set('n', '<leader>dv', function()
+    vim.diagnostic.config({
+        virtual_text = not vim.diagnostic.config().virtual_text
+    })
+end, { desc = "Toggle virtual text for diagnostics" })
+
 -- }}}
 
 -- {{{ text manipulation

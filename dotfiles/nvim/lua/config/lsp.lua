@@ -31,6 +31,7 @@ end
 
 local servers = {
     html = { filetypes = { "html", "twig", "hbs" }, },
+
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
@@ -41,13 +42,7 @@ local servers = {
             },
         },
     },
-    -- pyright = {
-    --     settings = {
-    --         python = {
-    --             pythonPath = vim.fn.exepath("python3")
-    --         }
-    --     }
-    -- },
+
     basedpyright = {
         settings = {
             python = {
@@ -55,6 +50,7 @@ local servers = {
             }
         }
     },
+
     rust_analyzer = {},
 }
 
