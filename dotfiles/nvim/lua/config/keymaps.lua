@@ -20,7 +20,6 @@ end, { desc = "Toggle virtual text for diagnostics" })
 
 -- {{{ text manipulation
 
--- it hurts that this isn't default
 vim.keymap.set('n', 'Y', 'yy', { noremap = true })
 
 -- hang onto text when indenting
@@ -28,7 +27,6 @@ vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
 -- move text up/down
-
 vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv", opts)
 vim.keymap.set('x', '<A-j>', ":m '>+1<CR>gv=gv", opts)
